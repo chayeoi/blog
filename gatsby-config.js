@@ -21,8 +21,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'images',
-        path: `${__dirname}/src/images`,
+        name: 'src',
+        path: `${__dirname}/src/`,
       },
     },
     {
@@ -71,10 +71,10 @@ module.exports = {
         name: 'CHNY Blog',
         short_name: 'CHNY',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#3d5afe',
+        theme_color: '#3d5afe',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png',
+        icon: 'src/assets/images/logo.png',
       },
     },
   ],
