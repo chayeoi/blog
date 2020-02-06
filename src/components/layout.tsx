@@ -1,9 +1,10 @@
+import 'typeface-montserrat'
+
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 
 import Footer from './footer'
 import Header from './header'
-import 'typeface-montserrat'
 
 interface Props {
   children: React.ReactNode;

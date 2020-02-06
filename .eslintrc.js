@@ -31,6 +31,8 @@ module.exports = {
     'react/jsx-tag-spacing': 'off',
     'react/prop-types': 'off',
     'semi': ['error', 'never'],
+    'simple-import-sort/sort': 'error',
+    'sort-imports': 'off',
   },
   overrides: [
     {
