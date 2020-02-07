@@ -1,8 +1,22 @@
 module.exports = {
   siteMetadata: {
-    title: 'CHNY Blog',
+    title: 'CHNY',
     description: 'My Personal Blog',
     author: '@chayeoi',
+    repository: {
+      name: 'chayeoi/blog',
+      url: 'https://github.com/chayeoi/blog',
+    },
+    contacts: [
+      { name: 'github', value: 'chayeoi', href: 'https://github.com/chayeoi' },
+      { name: 'instagram', value: 'chayeoi', href: 'https://www.instagram.com/chayeoi/' },
+      { name: 'facebook', value: 'chayeoi', href: 'https://www.facebook.com/chayeoi' },
+      { name: 'twitter', value: 'chayeoi', href: 'https://twitter.com/goBoZYtJmdB3QRy' },
+      { name: 'linkedin', value: 'chayeoi', href: 'https://www.linkedin.com/in/%EC%B0%AC%EC%97%B0-%EA%B9%80-928290177/' },
+      { name: 'email', value: 'chayeoikeem@gmail.com', href: 'mailto://chayeoikeem@gmail.com' },
+      // { name: 'rss', value: '' },
+      // { name: 'codepen', value: 'chayeoi' },
+    ],
   },
   plugins: [
     'gatsby-plugin-emotion',
