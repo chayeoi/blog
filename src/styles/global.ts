@@ -1,6 +1,8 @@
-import { css } from '@emotion/core'
+import { css, SerializedStyles } from '@emotion/core'
 
-const global = css`
+import { Theme } from './theme'
+
+const global = (theme: Theme): SerializedStyles => css`
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -70,8 +72,10 @@ const global = css`
     -webkit-text-decoration-skip: objects;
   }
 
-  a:active, a:hover {
+  a:active, a:hover, a:focus {
+    color: ${theme.palette.primary.main};
     outline-width: 0;
+    transition: color 0.2s;
   }
 
   abbr[title] {
@@ -87,6 +91,21 @@ const global = css`
 
   dfn {
     font-style: italic;
+  }
+
+  button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
   }
 
   button,
@@ -194,6 +213,8 @@ const global = css`
   }
 
   body {
+    color: ${theme.palette.grey[900]};
+    word-break: keep-all;
     font-family:
       'Avenir Next',
       'Spoqa Han Sans',
@@ -206,6 +227,7 @@ const global = css`
       Dotum,
       sans-serif;
     margin: 0;
+    word-break: keep-all;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

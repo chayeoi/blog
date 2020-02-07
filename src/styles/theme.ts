@@ -1,3 +1,5 @@
+import { hexToRgb, pxToRem } from '../utils'
+
 interface Palette {
   primary: {
     contrastText: string;
@@ -27,10 +29,16 @@ interface Palette {
     A400: string;
     A700: string;
   };
+  hexToRgb: (hex: string, alpha?: number) => string;
 }
 
-interface Theme {
+interface Typography {
+  pxToRem: (px: number) => string;
+}
+
+export interface Theme {
   palette: Palette;
+  typography: Typography;
 }
 
 const theme: Theme = {
@@ -63,6 +71,10 @@ const theme: Theme = {
       A400: '#303030',
       A700: '#616161',
     },
+    hexToRgb,
+  },
+  typography: {
+    pxToRem,
   },
 }
 

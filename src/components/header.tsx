@@ -1,20 +1,43 @@
+import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 import React from 'react'
+
+import Navbar from './navbar'
 
 interface Props {
   siteTitle?: string;
 }
 
 const Header: React.FC<Props> = ({ siteTitle = '' }) => (
-  <header>
-    <div>
-      <h1>
-        <Link to="/">
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+  <header css={s.header}>
+    <h1 css={s.title}>
+      <Link to="/">
+        {siteTitle}
+      </Link>
+    </h1>
+    <Navbar />
   </header>
 )
+
+const s = {
+  header: css`
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 24px 16px;
+  `,
+  title: css`
+    font-size: 2.5rem;
+    font-weight: 700;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  `,
+}
 
 export default Header
