@@ -1,5 +1,3 @@
-import 'typeface-montserrat'
-
 import { css } from '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'

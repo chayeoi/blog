@@ -27,6 +27,7 @@ module.exports = {
     'complexity': 'off',
     'no-warning-comments': 'off',
     'object-curly-spacing': ['error', 'always'],
+    'operator-linebreak': ['error', 'before'],
     'react/jsx-pascal-case': 'off',
     'react/jsx-tag-spacing': 'off',
     'react/prop-types': 'off',

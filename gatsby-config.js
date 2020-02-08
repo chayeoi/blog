@@ -1,3 +1,6 @@
+const FIRST_YEAR = 2018
+const currentYear = new Date().getFullYear()
+
 module.exports = {
   siteMetadata: {
     title: 'CHNY',
@@ -17,6 +20,14 @@ module.exports = {
       // { name: 'rss', value: '' },
       // { name: 'codepen', value: 'chayeoi' },
     ],
+    about: {
+      title: '개발자 김찬연',
+      content: [
+        { key: 0, value: `수학교육을 전공한 후 좋은 기회가 생겨 개발을 시작했고, 현재는 에듀테크 스타트업 클래스팅에서 ${currentYear - FIRST_YEAR + 1}년째 교육 서비스를 만들고 있습니다. 웹 표준과 새로운 기술 동향에 관심이 많습니다.` },
+        { key: 1, value: '\n' },
+        { key: 2, value: '음, 그런데 무슨 내용을 더 써야할 지 아직 모르겠.. 나중에 천천히 채워넣도록 하겠습니다. 그럼 이만! 😆' },
+      ],
+    },
     siteUrl: 'https://chny.netlify.com',
   },
   plugins: [
