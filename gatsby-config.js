@@ -17,6 +17,7 @@ module.exports = {
       // { name: 'rss', value: '' },
       // { name: 'codepen', value: 'chayeoi' },
     ],
+    siteUrl: 'https://chny.netlify.com',
   },
   plugins: [
     'gatsby-plugin-emotion',

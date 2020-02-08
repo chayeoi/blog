@@ -1,7 +1,15 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import React from 'react'
+import { Global } from '@emotion/core'
+import { ThemeProvider } from 'emotion-theming'
 
-// You can delete this file if you're not using it
+import global from './src/styles/global'
+import theme from './src/styles/theme'
+
+export const wrapRootElement = ({ element }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <Global styles={global} />
+      {element}
+    </ThemeProvider>
+  )
+}
