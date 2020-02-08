@@ -41,7 +41,7 @@ const HomePage: React.FC<Props> = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={data.site.siteMetadata.title} />
+      <SEO title="Home" />
       <div css={s.wrapper}>
         <Heading css={s.heading}>
           글 목록
