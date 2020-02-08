@@ -21,6 +21,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-lodash',
+    'gatsby-plugin-mdx',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
@@ -35,8 +36,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'src',
-        path: `${__dirname}/src/`,
+        name: 'assets',
+        path: `${__dirname}/src/assets/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: `${__dirname}/src/posts/`,
       },
     },
     {

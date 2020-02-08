@@ -29,7 +29,9 @@ const Layout: React.FC<Props> = ({ children }) => {
       <div css={s.wrapper}>
         <main css={s.main}>{children}</main>
         <Footer />
-        <Wave />
+        <div css={s.wave}>
+          <Wave />
+        </div>
       </div>
     </>
   )
@@ -38,13 +40,13 @@ const Layout: React.FC<Props> = ({ children }) => {
 const s = {
   wrapper: css`
     position: relative;
-    padding-top: 88px;
+    padding: 88px 0 64px;
   `,
   main: css`
     margin: 0 auto;
   `,
   wave: css`
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     bottom: 0;

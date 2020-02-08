@@ -1,7 +1,8 @@
-import { css } from '@emotion/core'
+import { css, SerializedStyles } from '@emotion/core'
 import { Link } from 'gatsby'
 import React from 'react'
 
+import { Theme } from '../styles/theme'
 import Navbar from './navbar'
 
 interface Props {
@@ -20,7 +21,7 @@ const Header: React.FC<Props> = ({ siteTitle = '' }) => (
 )
 
 const s = {
-  header: css`
+  header: (theme: Theme): SerializedStyles => css`
     position: fixed;
     z-index: 100;
     display: flex;
@@ -28,6 +29,7 @@ const s = {
     align-items: center;
     width: 100%;
     padding: 24px 16px;
+    background: ${theme.palette.primary.contrastText};
   `,
   title: css`
     font-size: 2.5rem;
