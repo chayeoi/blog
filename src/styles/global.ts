@@ -1,5 +1,6 @@
 import { css, SerializedStyles } from '@emotion/core'
 
+import mdx from './mdx'
 import { Theme } from './theme'
 
 const global = (theme: Theme): SerializedStyles => css`
@@ -87,6 +88,10 @@ const global = (theme: Theme): SerializedStyles => css`
   b, strong {
     font-weight: inherit;
     font-weight: bolder;
+  }
+
+  em {
+    font-style: italic;
   }
 
   dfn {
@@ -217,7 +222,9 @@ const global = (theme: Theme): SerializedStyles => css`
     word-break: keep-all;
     font-family:
       'Avenir Next',
+      'Futura PT',
       'Spoqa Han Sans',
+      'spoqahansans',
       'Apple SD Gothic Neo',
       'Nanum Barun Gothic',
       'Nanum Gothic',
@@ -231,6 +238,7 @@ const global = (theme: Theme): SerializedStyles => css`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  ${mdx}
 `
 
 export default global
