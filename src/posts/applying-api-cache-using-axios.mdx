@@ -33,7 +33,7 @@ http.get('/users', { cache: false }); // ③
 
 위와 같은 방식으로 캐시 어댑터를 적용하게 되면 모든 네트워크 요청이 캐싱되므로, 사용자가 데이터를 갱신하고 싶은 상황에서 문제가 될 수 있다. 따라서 링크를 직접 클릭하는 상황에서는 데이터를 새로 받아오도록 하고, 뒤로 가기 또는 앞으로 가기 동작 수행 시에만 캐싱된 데이터를 사용하도록 하는 게 가장 좋은 방법일 것이다.
 
-```javascript
+```jsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -78,7 +78,7 @@ const Pokemon = ({ history }) => {
 
 > 현 시점에서 Axios 최신 버전인 v0.19.0에서는 [커스텀 설정 옵션과 관련한 버그](https://github.com/axios/axios/pull/2207)가 있어서 `forceUpdate` 옵션을 사용할 수 없다. 이 옵션을 사용하려면 v0.18.1 버전을 사용해야 한다.
 
-## 참고
+## 참고 {#references}
 
 * [React SPA 뒤로가기 API Cache 적용 | dohoons](https://dohoons.com/blog/1810/)
 * [kuitos/axios-extensions](https://github.com/kuitos/axios-extensions)
