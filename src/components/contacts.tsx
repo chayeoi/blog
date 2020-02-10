@@ -48,7 +48,7 @@ const Contacts: React.FC<Props> = ({ contacts, ...otherProps }) => (
 const s = {
   root: css`
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     margin-bottom: 0.5rem;
   `,

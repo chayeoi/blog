@@ -1,0 +1,1 @@
+export const CONTAINER_MAX_WIDTH = 760

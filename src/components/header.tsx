@@ -29,7 +29,7 @@ const s = {
     align-items: center;
     width: 100%;
     padding: 24px 16px;
-    background: ${theme.palette.primary.contrastText};
+    background: ${theme.palette.hexToRgb(theme.palette.primary.contrastText, 0.8)};
   `,
   title: css`
     font-size: 2.5rem;
