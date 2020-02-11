@@ -6,7 +6,7 @@ updatedAt: 2019-04-10 00:00:00
 tags: [CSS]
 ---
 
-## z-index 속성을 사용하지 않았을 경우의 쌓임 (Stacking without the z-index property)
+## z-index 속성을 사용하지 않았을 경우의 쌓임 (Stacking without the z-index property) {#stacking-without-the-z-index-property}
 
 어떤 요소에도 `z-index` 속성이 명시되지 않았을 경우, 요소는 다음 순서에 따라 아래에서 위로 쌓인다.
 
@@ -18,7 +18,7 @@ tags: [CSS]
 
 [예제 링크](https://codepen.io/chayeoi/pen/BePbxM?&editable=true)
 
-## float된 요소의 쌓임 (Stacking with floated blocks)
+## float된 요소의 쌓임 (Stacking with floated blocks) {#stacking-with-floated-blocks}
 
 `float` 처리된 요소의 경우, 쌓이는 순서가 약간 달라진다. 기본적으로 `float` 처리된 블록은 `position` 속성이 지정되지 않은 요소와 지정된 요소 사이에 위치한다.
 
@@ -39,13 +39,13 @@ tags: [CSS]
 
 > 위 예제에서 `position` 속성이 지정되지 않았던 `div#4` 요소에 `opacity` 속성을 설정할 경우 조금 이해할 수 없는 일이 벌어질 것이다. 제일 아랫층에 놓여있던 `div#4`의 배경와 테두리가 `float` 처리된 요소와 `position` 속성이 지정된 요소의 윗 부분으로 올라오는 것인데, 이는 "`opacity` 속성이 설정될 경우 새로운 쌓임 맥락이 생성된다."는 표준 명세에 의한 것이다.
 
-## z-index 속성을 사용하여 쌓임 순서를 사용자 정의하기 (Using z-index)
+## z-index 속성을 사용하여 쌓임 순서를 사용자 정의하기 (Using z-index) {#using-z-index}
 
 `position` 속성이 지정된 요소에 `z-index` 속성을 설정함으로써 요소가 쌓이는 순서를 변경할 수 있다.
 
 [예제 링크](https://codepen.io/chayeoi/pen/NVBJzV?&editable=true)
 
-## 쌓임 맥락 (Stacking context)
+## 쌓임 맥락 (Stacking context) {#stacking-context}
 
 앞서 이야기한 것처럼 특정 요소가 쌓이는 순서는 `z-index` 값에 의해 영향을 받는다. 이런 일들은 요소가 **쌓임 맥락**을 형성하도록 만드는 특별한 속성을 갖게 될 때 발생한다.
 
@@ -83,7 +83,7 @@ tags: [CSS]
 
 [예제 링크](https://codepen.io/chayeoi/pen/VOBRBQ?&editable=true)
 
-## 참고
+## 참고 {#references}
 
 * [Stacking without the z-index property | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/Stacking_without_z-index)
 * [Stacking with floated blocks | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/Stacking_and_float)
