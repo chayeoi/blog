@@ -101,9 +101,9 @@ const theme: Theme = {
     },
     secondary: {
       contrastText: '#ffffff',
-      light: '#ffd740',
-      main: '#ffc400',
-      dark: '#ffab00',
+      light: '#ff8a80',
+      main: '#ff5252',
+      dark: '#ff1744',
     },
     grey: {
       50: '#fafafa',
