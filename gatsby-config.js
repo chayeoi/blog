@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 const FIRST_YEAR = 2018
 const currentYear = new Date().getFullYear()
 
@@ -83,7 +87,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+        trackingId: process.env.GA_TRACKING_ID,
       },
     },
     {
