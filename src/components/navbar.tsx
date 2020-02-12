@@ -3,7 +3,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby'
 import React from 'react'
 
 import { ALPHA } from '../constants'
-import { Theme } from '../styles/theme'
+import { Theme } from '../models/Theme'
 
 const Navbar: React.FC = () => {
   const data = useStaticQuery(graphql`

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 
 import { CONTAINER_MAX_WIDTH } from '../constants'
-import { Theme } from '../styles/theme'
+import { Theme } from '../models/Theme'
 import Contacts from './contacts'
 
 const Footer: React.FC = props => {

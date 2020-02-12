@@ -5,7 +5,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Theme } from '../styles/theme'
+import { Theme } from '../models/Theme'
 
 interface ComponentProps {
   children: {

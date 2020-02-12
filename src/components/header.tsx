@@ -2,7 +2,7 @@ import { css, SerializedStyles } from '@emotion/core'
 import { Link } from 'gatsby'
 import React from 'react'
 
-import { Theme } from '../styles/theme'
+import { Theme } from '../models/Theme'
 import Navbar from './navbar'
 
 interface Props {

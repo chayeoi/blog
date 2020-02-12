@@ -2,7 +2,7 @@ import { css, SerializedStyles } from '@emotion/core'
 import _ from 'lodash/fp'
 import React from 'react'
 
-import { Theme } from '../styles/theme'
+import { Theme } from '../models/Theme'
 
 interface Post {
   node: {

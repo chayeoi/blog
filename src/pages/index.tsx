@@ -6,22 +6,7 @@ import Heading from '../components/heading'
 import Layout from '../components/layout'
 import PostList from '../components/post-list'
 import SEO from '../components/seo'
-
-interface Mdx {
-  node: {
-    id: string;
-    frontmatter: {
-      title: string;
-      description: string;
-      tags?: string[];
-      createdAt: string;
-      updatedAt?: string;
-    };
-    fields: {
-      slug: string;
-    };
-  };
-}
+import { Mdx } from '../models/Mdx'
 
 interface Props {
   data: {

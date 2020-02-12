@@ -1,7 +1,7 @@
 import { css, keyframes, SerializedStyles } from '@emotion/core'
 import React from 'react'
 
-import { Theme } from '../styles/theme'
+import { Theme } from '../models/Theme'
 
 const Wave: React.FC = props => (
   <svg css={s.root} viewBox="0 0 120 28" {...props}>

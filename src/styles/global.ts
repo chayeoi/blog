@@ -1,7 +1,7 @@
 import { css, SerializedStyles } from '@emotion/core'
 
+import { Theme } from '../models/Theme'
 import mdx from './mdx'
-import { Theme } from './theme'
 
 const global = (theme: Theme): SerializedStyles => css`
   html, body, div, span, applet, object, iframe,

@@ -11,7 +11,7 @@ import {
   LINKEDIN_ICON,
   TWITTER_ICON,
 } from '../constants'
-import { Theme } from '../styles/theme'
+import { Theme } from '../models/Theme'
 import Icon from './icon'
 
 interface Contact {

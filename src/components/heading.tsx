@@ -1,7 +1,7 @@
 import { css, SerializedStyles } from '@emotion/core'
 import React from 'react'
 
-import { Theme } from '../styles/theme'
+import { Theme } from '../models/Theme'
 
 interface Props {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
