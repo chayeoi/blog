@@ -23,6 +23,11 @@ const components: Components = {
   ol: MDXComponents.OrderedList,
   li: MDXComponents.ListItem,
   p: MDXComponents.Paragraph,
+  blockquote: MDXComponents.Blockquote,
+  table: MDXComponents.Table,
+  tr: MDXComponents.TableRow,
+  th: MDXComponents.TableCell,
+  td: MDXComponents.TableCell,
 }
 
 const wrapRootElement = ({ element }: { element: React.ReactNode }): React.ReactNode => (
