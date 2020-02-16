@@ -8,18 +8,6 @@ import SEO from '../components/seo'
 import Utterances from '../components/utterances'
 import { Theme } from '../models/Theme'
 
-interface ComponentProps {
-  children: {
-    props: {
-      [key: string]: any;
-    };
-  };
-}
-
-interface Components {
-  [key: string]: (props: ComponentProps) => React.ReactNode;
-}
-
 interface Props {
   data: {
     mdx: {
@@ -52,7 +40,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
         <h1 css={s.heading}>{data.mdx.frontmatter.title}</h1>
         <ul css={s.dateList}>
           <li>
-            <time css={s.time} dateTime={data.mdx.frontmatter.createdAt}>
+            <time dateTime={data.mdx.frontmatter.createdAt}>
               {data.mdx.frontmatter.createdAt}
             </time>
             {isModified && (
@@ -64,7 +52,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
           </li>
           {isModified && (
             <li>
-              <time css={s.time} dateTime={data.mdx.frontmatter.createdAt}>
+              <time dateTime={data.mdx.frontmatter.createdAt}>
                 {data.mdx.frontmatter.updatedAt}
               </time>
               <span>
@@ -80,8 +68,6 @@ const BlogPost: React.FC<Props> = ({ data }) => {
     </Layout>
   )
 }
-
-export default BlogPost
 
 const s = {
   article: css`
@@ -101,10 +87,6 @@ const s = {
     font-size: ${theme.typography.pxToRem(14)};
     font-weight: 500;
     text-align: right;
-  `,
-  time: css`
-  `,
-  p: css`
   `,
 }
 
@@ -130,3 +112,5 @@ export const query = graphql`
     }
   }
 `
+
+export default BlogPost
