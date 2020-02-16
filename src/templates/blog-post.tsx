@@ -5,6 +5,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Utterances from '../components/utterances'
 import { Theme } from '../models/Theme'
 
 interface ComponentProps {
@@ -30,6 +31,13 @@ interface Props {
         tags: string[];
       };
       body: string;
+    };
+    site: {
+      siteMetadata: {
+        repository: {
+          name: string;
+        };
+      };
     };
   };
 }
@@ -67,6 +75,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
           )}
         </ul>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        <Utterances repo={data.site.siteMetadata.repository.name} />
       </article>
     </Layout>
   )
@@ -110,6 +119,13 @@ export const query = graphql`
         createdAt(formatString: "YYYY년 MM월 DD일")
         updatedAt(formatString: "YYYY년 MM월 DD일")
         tags
+      }
+    }
+    site {
+      siteMetadata {
+        repository {
+          name
+        }
       }
     }
   }
