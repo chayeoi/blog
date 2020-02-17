@@ -70,6 +70,9 @@ const s = {
     padding: 12px 8px;
     :hover, :focus {
       background-color: ${theme.palette.hexToRgb(theme.palette.primary.main, 0.08)};
+      h3 {
+        color: ${theme.palette.primary.main};
+      }
     }
   `,
   description: (theme: Theme): SerializedStyles => css`
@@ -83,8 +86,7 @@ const s = {
   `,
   tagItem: (theme: Theme): SerializedStyles => css`
     padding: 6px 8px;
-    color: ${theme.palette.primary.contrastText};
-    background-color: ${theme.palette.primary.main};
+    color: ${theme.palette.grey[900]};
     border-radius: 4px;
     font-size: ${theme.typography.pxToRem(12)};
     :not(:last-child) {

@@ -29,10 +29,11 @@ const s = {
     align-items: center;
     width: 100%;
     padding: 24px 16px;
-    background: ${theme.palette.hexToRgb(theme.palette.primary.contrastText, 0.8)};
+    background: ${theme.palette.primary.contrastText};
+    border: 1px solid ${theme.palette.grey[200]};
   `,
   title: css`
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 700;
     a {
       display: block;
