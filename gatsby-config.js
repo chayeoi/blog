@@ -19,9 +19,9 @@ module.exports = {
       { name: 'instagram', value: 'chayeoi', href: 'https://www.instagram.com/chayeoi/' },
       { name: 'facebook', value: 'chayeoi', href: 'https://www.facebook.com/chayeoi' },
       { name: 'twitter', value: 'chayeoi', href: 'https://twitter.com/goBoZYtJmdB3QRy' },
-      { name: 'linkedin', value: 'chayeoi', href: 'https://www.linkedin.com/in/%EC%B0%AC%EC%97%B0-%EA%B9%80-928290177/' },
+      { name: 'linkedin', value: 'chayeoi', href: `https://www.linkedin.com/in/${encodeURIComponent('찬연-김-928290177')}/` },
       { name: 'email', value: 'chayeoikeem@gmail.com', href: 'mailto://chayeoikeem@gmail.com' },
-      // { name: 'rss', value: '' },
+      { name: 'rss', value: 'https://chny.world/rss', href: 'https://feedly.com/i/subscription/feed/https://chny.world/rss' },
       // { name: 'codepen', value: 'chayeoi' },
     ],
     about: {
@@ -36,6 +36,62 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-emotion',
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              console.log('allMdx:', JSON.stringify(allMdx))
+              console.log('allMdx:', JSON.stringify(allMdx))
+              return allMdx.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.description,
+                  date: edge.node.fields.prefix,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }]
+                });
+              });
+            },
+            query: `
+              {
+                allMdx(sort: { fields: [frontmatter___createdAt], order: DESC }) {
+                  edges {
+                    node {
+                      id
+                      excerpt
+                      html
+                      frontmatter {
+                        title
+                        description
+                        tags
+                      }
+                      fields {
+                        slug
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml"
+          }
+        ]
+      }
+    },
     'gatsby-plugin-lodash',
     {
       resolve: 'gatsby-plugin-mdx',
