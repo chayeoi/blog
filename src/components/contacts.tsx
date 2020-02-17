@@ -9,6 +9,7 @@ import {
   GITHUB_ICON,
   INSTAGRAM_ICON,
   LINKEDIN_ICON,
+  RSS_ICON,
   TWITTER_ICON,
 } from '../constants'
 import { Theme } from '../models/Theme'
@@ -30,6 +31,7 @@ const ICONS = {
   github: GITHUB_ICON,
   instagram: INSTAGRAM_ICON,
   linkedin: LINKEDIN_ICON,
+  rss: RSS_ICON,
   twitter: TWITTER_ICON,
 }
 

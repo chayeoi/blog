@@ -19,9 +19,9 @@ module.exports = {
       { name: 'instagram', value: 'chayeoi', href: 'https://www.instagram.com/chayeoi/' },
       { name: 'facebook', value: 'chayeoi', href: 'https://www.facebook.com/chayeoi' },
       { name: 'twitter', value: 'chayeoi', href: 'https://twitter.com/goBoZYtJmdB3QRy' },
-      { name: 'linkedin', value: 'chayeoi', href: 'https://www.linkedin.com/in/%EC%B0%AC%EC%97%B0-%EA%B9%80-928290177/' },
+      { name: 'linkedin', value: 'chayeoi', href: `https://www.linkedin.com/in/${encodeURIComponent('찬연-김-928290177')}/` },
       { name: 'email', value: 'chayeoikeem@gmail.com', href: 'mailto://chayeoikeem@gmail.com' },
-      // { name: 'rss', value: '' },
+      { name: 'rss', value: 'https://chny.world/rss', href: 'https://feedly.com/i/subscription/feed/https://chny.world/rss.xml' },
       // { name: 'codepen', value: 'chayeoi' },
     ],
     about: {
@@ -36,6 +36,59 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-emotion',
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => allMdx.edges.map(edge => Object.assign({}, edge.node.frontmatter, {
+              description: edge.node.frontmatter.description,
+              date: edge.node.frontmatter.createdAt,
+              url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+              guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+              custom_elements: [{ 'content:encoded': edge.node.html }],
+            })),
+            query: `
+              {
+                allMdx(
+                  limit: 1000,
+                  sort: { fields: [frontmatter___createdAt], order: DESC }
+                ) {
+                  edges {
+                    node {
+                      html
+                      frontmatter {
+                        createdAt
+                        title
+                        description
+                        tags
+                      }
+                      fields {
+                        slug
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: 'RSS | CHNY',
+          },
+        ],
+      },
+    },
     'gatsby-plugin-lodash',
     {
       resolve: 'gatsby-plugin-mdx',
