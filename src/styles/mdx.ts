@@ -1,32 +1,24 @@
 import { css } from '@emotion/core'
 
 const mdx = css`
-  /**
-  * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
-  * Based on https://github.com/chriskempson/tomorrow-theme
-  * @author Rose Pritchard
-  * @custoimized by chayeoi
-  */
-
   @import url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css');
 
   .gatsby-highlight-code-line {
-    background-color: hsla(207, 95%, 15%, 1);
+    background-color: #f5f5f5;
     display: block;
     margin-right: -1.2em;
     margin-left: -1.2em;
     padding-right: 1em;
-    padding-left: 0.75em;
-    border-left: 0.35em solid #0687f0;
+    padding-left: 1.2em;
   }
 
   blockquote {
-    color: #999999;
+    color: #9e9e9e;
   }
 
   code[class*='language-'],
   pre[class*='language-'] {
-    color: #e0e0e0;
+    color: #24292e;
     background: none;
     font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono',
       monospace;
@@ -60,12 +52,12 @@ const mdx = css`
     margin: 1.5em 0;
     padding: 1.2em;
     overflow: auto;
-    border-radius: 2px;
+    border-radius: 3px;
+    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2)
   }
 
   :not(pre) > code[class*='language-'],
   pre[class*='language-'] {
-    background: #183055;
   }
 
   /* Inline code */
@@ -79,43 +71,46 @@ const mdx = css`
   }
 
   .attr-name {
-    color: #c5a5c5;
+    color: #005cc5;
   }
   .attr-value {
-    color: #8dc891;
+    color: #032f62;
   }
   .comment, .block-comment, .prolog, .doctype, .cdata {
-    color: #999999;
+    color: #6a737d;
   }
   .property, .number, .function-name, .constant, .symbol, .deleted {
-    color: #5a9bcf;
+    color: #6f42c1;
   }
   .boolean {
-    color: #ff8b50;
+    color: #005cc5;
   }
   .tag {
-    color: #fc929e;
+    color: #22863a;
   }
   .string {
-    color: #8dc891;
+    color: #032f62;
   }
   .punctuation {
-    color: #8dc891;
+    color: #24292e;
   }
   .selector, .char, .builtin, .inserted {
-    color: #D8DEE9;
+    color: #005cc5;
   }
   .function {
-    color: #79b6f2;
+    color: #6f42c1;
   }
   .operator, .entity, .url, .variable {
-    color: #d7deea;
+    color: #005cc5;
   }
   .keyword {
-    color: #c5a5c5;
+    color: #d73a49;
   }
   .at-rule, .class-name {
-    color: #FAC863;
+    color: #e36209;
+  }
+  .rule {
+    color: #d73a49;
   }
   .important {
     font-weight: 400;
@@ -131,7 +126,7 @@ const mdx = css`
   }
 
 
-  pre > code.highlight {
+  /* pre > code.highlight {
     outline: .4em solid #FF7E7B;
     outline-offset: .4em;
   }
@@ -144,7 +139,7 @@ const mdx = css`
   .line-highlight {
     background: #E6ECF133;
     background: linear-gradient(to right, #E6ECF133 70%, #E6ECF100);
-  }
+  } */
 
   /* Anchor */
   .anchor.after, .anchor.before {
