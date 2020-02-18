@@ -7,6 +7,7 @@ import React from 'react'
 import Heading from '../components/heading'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { CONTAINER_MAX_WIDTH } from '../constants'
 import { Theme } from '../models/Theme'
 
 interface Para {
@@ -62,6 +63,8 @@ const AboutPage: React.FC<Props> = ({ data }) => (
 
 const s = {
   wrapper: css`
+    max-width: ${CONTAINER_MAX_WIDTH}px;
+    margin: 0 auto auto;
     padding: 24px 16px;
   `,
   heading: css`

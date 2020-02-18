@@ -1,7 +1,8 @@
-import { css, SerializedStyles } from '@emotion/core'
+/** @jsx jsx */
+import { css, jsx, SerializedStyles } from '@emotion/core'
 import { Link } from 'gatsby'
-import React from 'react'
 
+import { HEADER_MIN_WIDTH } from '../constants'
 import { Theme } from '../models/Theme'
 import Navbar from './navbar'
 
@@ -23,11 +24,13 @@ const Header: React.FC<Props> = ({ siteTitle = '' }) => (
 const s = {
   header: (theme: Theme): SerializedStyles => css`
     position: fixed;
+    top: 0;
     z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    min-height: ${HEADER_MIN_WIDTH}px;
     padding: 24px 16px;
     background: ${theme.palette.primary.contrastText};
     border: 1px solid ${theme.palette.grey[200]};
