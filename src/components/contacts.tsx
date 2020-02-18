@@ -1,9 +1,8 @@
-import { css, SerializedStyles } from '@emotion/core'
+import { css } from '@emotion/core'
 import _ from 'lodash/fp'
 import React from 'react'
 
 import {
-  ALPHA,
   EMAIL_ICON,
   FACEBOOK_ICON,
   GITHUB_ICON,
@@ -12,8 +11,8 @@ import {
   RSS_ICON,
   TWITTER_ICON,
 } from '../constants'
-import { Theme } from '../models/Theme'
 import Icon from './icon'
+import IconButton from './icon-button'
 
 interface Contact {
   name: 'email' | 'facebook' | 'github' | 'instagram' | 'linkedin' | 'twitter';
@@ -39,9 +38,9 @@ const Contacts: React.FC<Props> = ({ contacts, ...otherProps }) => (
   <ul css={s.root} {...otherProps}>
     {_.map((contact: Contact): React.ReactNode => (
       <li key={contact.name} css={s.contactItem}>
-        <a href={contact.href} target="_blank" rel="noopener noreferrer">
+        <IconButton as="a" href={contact.href} target="_blank" rel="noopener noreferrer">
           <Icon name={contact.name} icon={ICONS[contact.name]} />
-        </a>
+        </IconButton>
       </li>
     ), contacts)}
   </ul>
@@ -54,19 +53,8 @@ const s = {
     align-items: center;
     margin-bottom: 0.5rem;
   `,
-  contactItem: (theme: Theme): SerializedStyles => css`
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      padding: 8px;
-      border-radius: 50%;
-      :hover, :focus {
-        background-color: ${theme.palette.hexToRgb(theme.palette.primary.light, ALPHA)};
-      }
-    }
+  contactItem: css`
+    margin: 0 0.25rem;
   `,
 }
 

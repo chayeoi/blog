@@ -28,7 +28,7 @@ const theme: Theme = {
     primary: {
       contrastText: '#ffffff',
       light: '#536dfe',
-      main: '#3d5afe',
+      main: '#00b6f3',
       dark: '#304ffe',
     },
     secondary: {

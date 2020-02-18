@@ -237,6 +237,7 @@ const global = (theme: Theme): SerializedStyles => css`
     word-break: keep-all;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #f1f2f6;
   }
   ${mdx}
 `

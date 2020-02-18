@@ -68,6 +68,10 @@ const s = {
     width: 100%;
     height: 100%;
     padding: 12px 8px;
+    /* font-weight: 700; */
+    border-radius: 12px;
+    box-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9), 5px 5px 8px rgba(0, 0, 0, 0.07);
+    transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     :hover, :focus {
       background-color: ${theme.palette.hexToRgb(theme.palette.primary.main, 0.08)};
       h3 {

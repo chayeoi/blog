@@ -6,6 +6,7 @@ import Heading from '../components/heading'
 import Layout from '../components/layout'
 import PostList from '../components/post-list'
 import SEO from '../components/seo'
+import { CONTAINER_MAX_WIDTH } from '../constants'
 import { Mdx } from '../models/Mdx'
 
 interface Props {
@@ -27,9 +28,12 @@ const HomePage: React.FC<Props> = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
+      <div css={s.intro}>
+        개발자 개발자
+      </div>
       <div css={s.wrapper}>
         <Heading css={s.heading}>
-          글 목록
+          포스트 목록
         </Heading>
         <PostList posts={posts} />
       </div>
@@ -38,7 +42,19 @@ const HomePage: React.FC<Props> = ({ data }) => {
 }
 
 const s = {
+  intro: css`
+    display: flex;
+    align-items: flex-end;
+    height: 360px;
+    padding: 32px;
+    color: #fff;
+    background-color: #212121;
+    font-size: 3rem;
+    font-weight: bold;
+  `,
   wrapper: css`
+    max-width: ${CONTAINER_MAX_WIDTH}px;
+    margin: 0 auto auto;
     padding: 24px 16px;
   `,
   heading: css`
