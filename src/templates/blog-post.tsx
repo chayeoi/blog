@@ -19,6 +19,12 @@ interface Props {
         createdAt: string;
         updatedAt: string;
         tags: string[];
+        cover?: {
+          publicURL: string;
+          internal: {
+            mediaType: string;
+          };
+        };
       };
       body: string;
     };
