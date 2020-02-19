@@ -101,20 +101,27 @@ const s = {
     color: ${theme.palette.grey[700]};
     line-height: 1.4;
   `,
-  tagList: css`
+  tagList: (theme: Theme): SerializedStyles => css`
     position: absolute;
     bottom: 0.25rem;
     right: 0.25rem;
     display: flex;
     justify-content: flex-end;
+    ${theme.breakpoints.media.sm} {
+      bottom: 0.5rem;
+      right: 0.5rem;
+    }
   `,
   tagItem: (theme: Theme): SerializedStyles => css`
     padding: 6px 8px;
-    color: ${theme.palette.grey[900]};
+    color: ${theme.palette.primary.contrastText};
     border-radius: 4px;
     font-size: ${theme.typography.pxToRem(12)};
     :not(:last-child) {
       margin-right: 0.25rem;
+    }
+    ${theme.breakpoints.media.sm} {
+      font-size: ${theme.typography.pxToRem(14)};
     }
   `,
 }

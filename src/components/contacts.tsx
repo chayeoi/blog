@@ -52,7 +52,7 @@ const s = {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
   `,
   contactItem: (theme: Theme): SerializedStyles => css`
     a {
@@ -65,6 +65,9 @@ const s = {
       border-radius: 50%;
       :hover, :focus {
         background-color: ${theme.palette.hexToRgb(theme.palette.primary.light, ALPHA)};
+      }
+      ${theme.breakpoints.media.sm} {
+        padding: 12px;
       }
     }
   `,

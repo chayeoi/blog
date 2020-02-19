@@ -1,5 +1,7 @@
-import { css } from '@emotion/core'
+import { css, SerializedStyles } from '@emotion/core'
 import React from 'react'
+
+import { Theme } from '../models/Theme'
 
 interface Props {
   name: string;
@@ -17,13 +19,10 @@ const Icon: React.FC<Props> = ({ name, icon }) => (
 )
 
 const s = {
-  root: css`
+  root: (theme: Theme): SerializedStyles => css`
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
+    width: 1rem;
+    height: 1rem;
     text-align: center;
     text-transform: none;
     line-height: 1rem;
@@ -32,6 +31,10 @@ const s = {
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
+    ${theme.breakpoints.media.sm} {
+      width: ${theme.typography.pxToRem(18)};
+      height: ${theme.typography.pxToRem(18)};
+    }
   `,
 }
 
