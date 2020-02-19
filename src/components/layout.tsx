@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 
-import { HEADER_MIN_WIDTH } from '../constants'
+import { HEADER_MIN_HEIGHT } from '../constants'
 import Footer from './footer'
 import Header from './header'
 
@@ -37,7 +37,7 @@ const s = {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: ${HEADER_MIN_WIDTH}px;
+    padding: ${HEADER_MIN_HEIGHT}px 0;
   `,
   wrapper: css`
     flex-grow: 1;

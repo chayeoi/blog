@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import _ from 'lodash/fp'
 import { useCallback, useEffect, useState } from 'react'
 
-import { HEADER_MIN_WIDTH } from '../constants'
+import { HEADER_MIN_HEIGHT } from '../constants'
 import { usePrevious } from '../hooks'
 import { Theme } from '../models/Theme'
 import Navbar from './navbar'
@@ -18,8 +18,12 @@ const Header: React.FC<Props> = ({ siteTitle = '' }) => {
 
   const prevScrollY = usePrevious(scrollY)
 
-  const handleScroll = useCallback(_.throttle(200, () => {
-    setScrollY(window.pageYOffset)
+  const visible = scrollY <= HEADER_MIN_HEIGHT || scrollY <= prevScrollY || _.isUndefined(prevScrollY)
+
+  const handleScroll = useCallback(_.throttle(100, () => {
+    if (window.pageYOffset >= HEADER_MIN_HEIGHT) {
+      setScrollY(window.pageYOffset)
+    }
   }), [])
 
   useEffect(() => {
@@ -32,8 +36,8 @@ const Header: React.FC<Props> = ({ siteTitle = '' }) => {
     <header
       css={s.header}
       style={{
-        opacity: scrollY > prevScrollY ? 0 : 1,
-        transform: `translateY(${scrollY > prevScrollY ? -100 : 0}%)`,
+        opacity: visible ? 1 : 0,
+        transform: `translateY(${visible ? 0 : -100}%)`,
       }}
     >
       <h1 css={s.title}>
@@ -55,7 +59,7 @@ const s = {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    min-height: ${HEADER_MIN_WIDTH}px;
+    min-height: ${HEADER_MIN_HEIGHT}px;
     padding: 24px 16px;
     background: ${theme.palette.primary.contrastText};
     border-bottom: 1px solid ${theme.palette.grey[200]};
