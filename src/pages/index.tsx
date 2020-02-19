@@ -68,8 +68,14 @@ export const query = graphql`
             title
             description
             tags
-            createdAt(formatString: "YYYY년 MM월 DD일")
-            updatedAt(formatString: "YYYY년 MM월 DD일")
+            createdAt
+            updatedAt
+            cover {
+              publicURL
+              internal {
+                mediaType
+              }
+            }
           }
           fields {
             slug

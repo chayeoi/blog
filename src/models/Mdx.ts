@@ -7,6 +7,12 @@ export interface Mdx {
       tags?: string[];
       createdAt: string;
       updatedAt?: string;
+      cover?: {
+        publicURL: string;
+        internal: {
+          mediaType: string;
+        };
+      };
     };
     fields: {
       slug: string;
