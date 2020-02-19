@@ -48,7 +48,7 @@ const AboutPage: React.FC<Props> = ({ data }) => (
       <Image
         css={s.image}
         fluid={data.file.childImageSharp.fluid}
-        alt="headshot"
+        alt="개발자 김찬연"
       />
       <h3 css={s.name}>{data.site.siteMetadata.about.title}</h3>
       <p css={s.paragraph}>
