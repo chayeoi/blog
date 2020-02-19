@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css, SerializedStyles } from '@emotion/core'
 import { graphql } from 'gatsby'
 import React from 'react'
 
@@ -8,6 +8,7 @@ import PostList from '../components/post-list'
 import SEO from '../components/seo'
 import { CONTAINER_MAX_WIDTH } from '../constants'
 import { Mdx } from '../models/Mdx'
+import { Theme } from '../models/Theme'
 
 interface Props {
   data: {
@@ -43,21 +44,27 @@ const HomePage: React.FC<Props> = ({ data }) => {
 }
 
 const s = {
-  intro: css`
+  intro: (theme: Theme): SerializedStyles => css`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 360px;
     padding: 32px;
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 300;
     line-height: 1.3;
     text-align: center;
+    ${theme.breakpoints.media.sm} {
+      font-size: 3rem;
+    }
   `,
-  strong: css`
-    font-size: 4rem;
+  strong: (theme: Theme): SerializedStyles => css`
+    font-size: 2.25rem;
     font-weight: 700;
+    ${theme.breakpoints.media.sm} {
+      font-size: 4rem;
+    }
   `,
   wrapper: css`
     max-width: ${CONTAINER_MAX_WIDTH}px;

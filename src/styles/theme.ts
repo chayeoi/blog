@@ -1,7 +1,6 @@
-import { css } from '@emotion/core'
 import _ from 'lodash/fp'
 
-import { Media, Sizes, Theme } from '../models/Theme'
+import { Sizes, Theme } from '../models/Theme'
 import { hexToRgb, pxToRem } from '../utils'
 
 const theme: Theme = {
@@ -14,15 +13,21 @@ const theme: Theme = {
       xl: 1960,
     },
     get media() {
-      return _.reduce<string, Media>((acc, label) => ({
+      return _.reduce((acc, label) => ({
         ...acc,
-        [label]: (...args: string[]) => css`
-          @media (min-width: ${this.sizes[label as keyof Sizes]}px) {
-            ${css(...args)}
-          }
-        `,
+        [label]: `@media (min-width: ${this.sizes[label as keyof Sizes]}px)`,
       }), {}, _.keys(this.sizes))
     },
+    // get media() {
+    //   return _.reduce<string, Media>((acc, label) => ({
+    //     ...acc,
+    //     [label]: (...args: string[]) => css`
+    //       @media (min-width: ${this.sizes[label as keyof Sizes]}px) {
+    //         ${css(...args)}
+    //       }
+    //     `,
+    //   }), {}, _.keys(this.sizes))
+    // },
   },
   palette: {
     primary: {

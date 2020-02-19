@@ -1,5 +1,3 @@
-import { SerializedStyles } from '@emotion/core'
-
 export interface Sizes {
   xs: number;
   sm: number;
@@ -9,12 +7,16 @@ export interface Sizes {
 }
 
 export interface Media {
-  xs?: (strings: string[], size: number, properties: SerializedStyles) => SerializedStyles;
-  sm?: (strings: string[], size: number, properties: SerializedStyles) => SerializedStyles;
-  md?: (strings: string[], size: number, properties: SerializedStyles) => SerializedStyles;
-  lg?: (strings: string[], size: number, properties: SerializedStyles) => SerializedStyles;
-  xl?: (strings: string[], size: number, properties: SerializedStyles) => SerializedStyles;
+  [key: string]: string;
 }
+
+// export interface Media {
+//   xs?: (strings: string[], size: number, properties: SerializedStyles) => SerializedStyles;
+//   sm?: (strings: string[], size: number, properties: SerializedStyles) => SerializedStyles;
+//   md?: (strings: string[], size: number, properties: SerializedStyles) => SerializedStyles;
+//   lg?: (strings: string[], size: number, properties: SerializedStyles) => SerializedStyles;
+//   xl?: (strings: string[], size: number, properties: SerializedStyles) => SerializedStyles;
+// }
 
 export interface Breakpoints {
   sizes: {
