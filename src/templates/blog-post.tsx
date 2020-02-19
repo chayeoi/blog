@@ -1,4 +1,5 @@
 import { css, SerializedStyles } from '@emotion/core'
+import dayjs from 'dayjs'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
@@ -42,7 +43,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
         <ul css={s.dateList}>
           <li>
             <time dateTime={data.mdx.frontmatter.createdAt}>
-              {data.mdx.frontmatter.createdAt}
+              {dayjs(data.mdx.frontmatter.createdAt).format('YYYY년 MM월 DD일')}
             </time>
             {isModified && (
               <span>
@@ -53,8 +54,8 @@ const BlogPost: React.FC<Props> = ({ data }) => {
           </li>
           {isModified && (
             <li>
-              <time dateTime={data.mdx.frontmatter.createdAt}>
-                {data.mdx.frontmatter.updatedAt}
+              <time dateTime={data.mdx.frontmatter.updatedAt}>
+                {dayjs(data.mdx.frontmatter.updatedAt).format('YYYY년 MM월 DD일')}
               </time>
               <span>
                 {' '}
@@ -101,8 +102,8 @@ export const query = graphql`
       frontmatter {
         title
         description
-        createdAt(formatString: "YYYY년 MM월 DD일")
-        updatedAt(formatString: "YYYY년 MM월 DD일")
+        createdAt
+        updatedAt
         tags
       }
     }
