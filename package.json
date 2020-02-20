@@ -2,7 +2,7 @@
   "name": "blog",
   "private": true,
   "description": "My personal blog",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "chayeoi <chayeoikeem@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.27",
