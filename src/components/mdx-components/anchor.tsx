@@ -8,7 +8,7 @@ export const Anchor: React.FC = props => <a css={s.a} {...props} />
 const s = {
   a: (theme: Theme): SerializedStyles => css`
     color: ${theme.palette.primary.main};
-    :hover {
+    :hover, :focus {
       text-decoration: underline;
     }
   `,
