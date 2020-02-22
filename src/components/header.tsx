@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import _ from 'lodash/fp'
 import { useCallback, useEffect, useState } from 'react'
 
-import { HEADER_MIN_HEIGHT } from '../constants'
+import { ColorMode, HEADER_MIN_HEIGHT } from '../constants'
 import { usePrevious } from '../hooks'
 import { Theme } from '../models/Theme'
 import Navbar from './navbar'
@@ -62,8 +62,12 @@ const s = {
     min-height: ${HEADER_MIN_HEIGHT}px;
     padding: 24px 16px;
     background: ${theme.palette.background.paper};
-    border-bottom: 1px solid ${theme.palette.grey[200]};
-    transition: transform 0.5s, opacity 0.3s;
+    border-bottom: 1px solid ${theme.palette.grey[theme.palette.type === ColorMode.LIGHT ? 200 : 800]};
+    transition:
+      transform 0.5s,
+      opacity 0.3s,
+      border 0.3s,
+      background-color 0.3s;
   `,
   title: css`
     font-size: 2.25rem;
