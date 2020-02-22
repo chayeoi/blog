@@ -1,27 +1,28 @@
 import React, { memo, useLayoutEffect, useRef } from 'react'
 
+import { ColorMode } from '../constants'
+
 export interface Props {
   repo: string;
-  theme?: 'github-light' | 'github-dark' | 'github-dark-orange' | 'icy-dark' | 'dark-blue' | 'photon-dark';
 }
 
-const Utterances: React.FC<Props> = memo(({ repo, theme = 'github-light' }) => {
+const Utterances: React.FC<Props> = memo(({ repo }) => {
   const elementRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
     const [utterances] = document.getElementsByClassName('utterances')
 
     if (!utterances) {
+      const value = localStorage.getItem('colorMode') as ColorMode || ColorMode.LIGHT
       const script = document.createElement('script')
-
       const attributes = {
         src: 'https://utteranc.es/client.js',
         'issue-term': 'pathname',
         crossOrigin: 'anonymous',
         async: 'true',
         label: 'comment',
+        theme: value === ColorMode.LIGHT ? 'github-light' : 'dark-blue',
         repo,
-        theme,
       }
 
       Object.entries(attributes).forEach(([key, value]) => {
@@ -30,7 +31,7 @@ const Utterances: React.FC<Props> = memo(({ repo, theme = 'github-light' }) => {
 
       elementRef.current?.appendChild(script)
     }
-  }, [repo, theme])
+  }, [repo])
 
   return <div ref={elementRef} />
 })
