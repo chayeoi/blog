@@ -10,7 +10,7 @@ import SEO from '../components/seo'
 import { CONTAINER_MAX_WIDTH } from '../constants'
 import { Theme } from '../models/Theme'
 
-interface Para {
+interface Phrase {
   key: number;
   value: string;
 }
@@ -21,7 +21,7 @@ interface Props {
       siteMetadata: {
         about: {
           title: string;
-          content: Para[];
+          content: string;
         };
       };
     };
@@ -38,28 +38,40 @@ interface Props {
   };
 }
 
-const AboutPage: React.FC<Props> = ({ data }) => (
-  <Layout>
-    <SEO title="About" />
-    <div css={s.wrapper}>
-      <Heading css={s.heading}>
-        소개
-      </Heading>
-      <Image
-        css={s.image}
-        fluid={data.file.childImageSharp.fluid}
-        alt="개발자 김찬연"
-      />
-      <h3 css={s.name}>{data.site.siteMetadata.about.title}</h3>
-      <p css={s.paragraph}>
-        {_.map((para: { key: number; value: string }): React.ReactNode => (para.value === '\n'
-          ? <br key={para.key} />
-          : <span key={para.key}>{para.value}</span>
-        ), data.site.siteMetadata.about.content)}
-      </p>
-    </div>
-  </Layout>
-)
+const AboutPage: React.FC<Props> = ({ data }) => {
+  const phrases = _.compose(
+    // @ts-ignore
+    _.map.convert({ cap: false })((p: string, index: number): Phrase => ({
+      key: index,
+      value: _.trim(p),
+    })),
+    _.filter((p: string) => Boolean(_.trim(p))),
+    _.split('\n'),
+  )(data.site.siteMetadata.about.content)
+
+  return (
+    <Layout>
+      <SEO title="About" />
+      <div css={s.wrapper}>
+        <Heading css={s.heading}>
+          소개
+        </Heading>
+        <Image
+          css={s.image}
+          fluid={data.file.childImageSharp.fluid}
+          alt="개발자 김찬연"
+        />
+        <h3 css={s.name}>{data.site.siteMetadata.about.title}</h3>
+        <div css={s.content}>
+          {_.map((phrase: Phrase) => (
+            <p key={phrase.key}>{phrase.value}</p>
+            // @ts-ignore
+          ), phrases)}
+        </div>
+      </div>
+    </Layout>
+  )
+}
 
 const s = {
   wrapper: css`
@@ -86,7 +98,7 @@ const s = {
     font-size: 2rem;
     font-weight: 700;
   `,
-  paragraph: (theme: Theme): SerializedStyles => css`
+  content: (theme: Theme): SerializedStyles => css`
     color: ${theme.palette.text.primary};
     line-height: 1.8;
   `,
@@ -100,10 +112,7 @@ export const query = graphql`
       siteMetadata {
         about {
           title
-          content {
-            key
-            value
-          }
+          content
         }
       }
     }
