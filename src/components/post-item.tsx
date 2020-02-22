@@ -73,7 +73,7 @@ const s = {
   `,
   heading: (theme: Theme): SerializedStyles => css`
     margin-bottom: 0.5rem;
-    color: ${theme.palette.grey[800]};
+    color: ${theme.palette.text.primary};
     font-size: ${theme.typography.pxToRem(24)};
     font-weight: 700;
     line-height: 1.2;
@@ -81,7 +81,7 @@ const s = {
   createdAt: (theme: Theme): SerializedStyles => css`
     display: block;
     margin-bottom: 0.5rem;
-    color: ${theme.palette.grey[500]};
+    color: ${theme.palette.text.tertiary};
     font-size: ${theme.typography.pxToRem(14)};
   `,
   link: (theme: Theme): SerializedStyles => css`
@@ -99,7 +99,7 @@ const s = {
   `,
   description: (theme: Theme): SerializedStyles => css`
     margin-bottom: 0.75rem;
-    color: ${theme.palette.grey[700]};
+    color: ${theme.palette.text.secondary};
     line-height: 1.4;
   `,
   tagList: (theme: Theme): SerializedStyles => css`

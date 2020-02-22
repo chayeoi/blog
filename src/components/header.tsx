@@ -61,7 +61,7 @@ const s = {
     width: 100%;
     min-height: ${HEADER_MIN_HEIGHT}px;
     padding: 24px 16px;
-    background: ${theme.palette.primary.contrastText};
+    background: ${theme.palette.background.paper};
     border-bottom: 1px solid ${theme.palette.grey[200]};
     transition: transform 0.5s, opacity 0.3s;
   `,

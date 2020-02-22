@@ -87,7 +87,7 @@ const s = {
     font-weight: 700;
   `,
   paragraph: (theme: Theme): SerializedStyles => css`
-    color: ${theme.palette.grey[800]};
+    color: ${theme.palette.text.primary};
     line-height: 1.8;
   `,
 }
