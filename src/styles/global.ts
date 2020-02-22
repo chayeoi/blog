@@ -71,12 +71,12 @@ const global = (theme: Theme): SerializedStyles => css`
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
+    transition: color 0.2s;
   }
 
   a:active, a:hover, a:focus {
     color: ${theme.palette.primary.main};
     outline-width: 0;
-    transition: color 0.2s;
   }
 
   abbr[title] {
@@ -218,8 +218,8 @@ const global = (theme: Theme): SerializedStyles => css`
   }
 
   body {
-    color: ${theme.palette.grey[900]};
-    word-break: keep-all;
+    color: ${theme.palette.text.default};
+    background-color: ${theme.palette.background.default};
     font-family:
       'Avenir Next',
       'Futura PT',
@@ -237,6 +237,7 @@ const global = (theme: Theme): SerializedStyles => css`
     word-break: keep-all;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    word-break: keep-all;
   }
   ${mdx}
 `

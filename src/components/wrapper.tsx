@@ -31,7 +31,7 @@ const components: Components = {
 }
 
 const Wrapper: React.FC = ({ children }) => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={theme.light}>
     <MDXProvider components={components}>
       <Global styles={global} />
       {children}

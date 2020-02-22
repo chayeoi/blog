@@ -30,6 +30,7 @@ export interface Breakpoints {
 }
 
 export interface Palette {
+  type: 'dark' | 'light';
   primary: {
     contrastText: string;
     light: string;
@@ -58,6 +59,16 @@ export interface Palette {
     A400: string;
     A700: string;
   };
+  background: {
+    paper: string;
+    default: string;
+  };
+  text: {
+    default: string;
+    primary: string;
+    secondary: string;
+    tertiary: string;
+  };
   hexToRgb: (hex: string, alpha?: number) => string;
 }
 
@@ -69,4 +80,9 @@ export interface Theme {
   breakpoints: Breakpoints;
   palette: Palette;
   typography: Typography;
+}
+
+export interface ThemeMap {
+  dark: Theme;
+  light: Theme;
 }

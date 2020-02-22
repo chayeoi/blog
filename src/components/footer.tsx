@@ -40,7 +40,7 @@ const s = {
   `,
   copyright: (theme: Theme): SerializedStyles => css`
     display: block;
-    color: ${theme.palette.grey[800]};
+    color: ${theme.palette.text.primary};
     font-size: ${theme.typography.pxToRem(14)};
     font-style: italic;
     text-align: center;
