@@ -1,3 +1,4 @@
+export { default as ColorMode } from './color-mode'
 export * from './icons'
 export * from './media-types'
 export * from './palette'

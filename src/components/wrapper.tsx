@@ -1,8 +1,10 @@
 import { Global } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import { ThemeProvider } from 'emotion-theming'
-import React from 'react'
+import React, { useState } from 'react'
 
+import { ColorMode } from '../constants'
+import ColorModeContext from '../contexts/color-mode-context'
 import global from '../styles/global'
 import theme from '../styles/theme'
 import * as MDXComponents from './mdx-components'
@@ -30,13 +32,19 @@ const components: Components = {
   td: MDXComponents.TableCell,
 }
 
-const Wrapper: React.FC = ({ children }) => (
-  <ThemeProvider theme={theme.light}>
-    <MDXProvider components={components}>
-      <Global styles={global} />
-      {children}
-    </MDXProvider>
-  </ThemeProvider>
-)
+const Wrapper: React.FC = ({ children }) => {
+  const [colorMode, setColorMode] = useState<ColorMode>(ColorMode.LIGHT)
+
+  return (
+    <ColorModeContext.Provider value={[colorMode, setColorMode]}>
+      <ThemeProvider theme={theme[colorMode]}>
+        <MDXProvider components={components}>
+          <Global styles={global} />
+          {children}
+        </MDXProvider>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
+  )
+}
 
 export default Wrapper
