@@ -1,50 +1,24 @@
 /** @jsx jsx */
 import { css, jsx, SerializedStyles } from '@emotion/core'
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
 import { memo } from 'react'
 
 import { ALPHA } from '../constants'
 import { Theme } from '../models/Theme'
 import ThemeSwitch from './theme-switch'
 
-const Navbar: React.FC = memo(() => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          repository {
-            name
-            url
-          }
-        }
-      }
-    }
-  `)
-
-  return (
-    <nav>
-      <ul css={s.menuList}>
-        <li>
-          <a
-            css={s.link}
-            href={data.site.siteMetadata.repository.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            title={data.site.siteMetadata.repository.name}
-          >
-            GitHub
-          </a>
-        </li>
-        <li>
-          <Link css={s.link} to="/about">About</Link>
-        </li>
-        <li>
-          <ThemeSwitch />
-        </li>
-      </ul>
-    </nav>
-  )
-})
+const Navbar: React.FC = memo(() => (
+  <nav>
+    <ul css={s.menuList}>
+      <li>
+        <Link css={s.link} to="/about">About</Link>
+      </li>
+      <li>
+        <ThemeSwitch />
+      </li>
+    </ul>
+  </nav>
+))
 
 const s = {
   menuList: css`
