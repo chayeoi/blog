@@ -1,10 +1,10 @@
 import { css } from '@emotion/core'
 
-const mdx = css`
+const dark = css`
   @import url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css');
 
   .gatsby-highlight-code-line {
-    background-color: #f5f5f5;
+    background-color: #212533;
     display: block;
     margin-right: -1.2em;
     margin-left: -1.2em;
@@ -18,10 +18,9 @@ const mdx = css`
 
   code[class*='language-'],
   pre[class*='language-'] {
-    color: #24292e;
+    color: #bfc7d5;
     background: none;
-    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono',
-      monospace;
+    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -53,7 +52,8 @@ const mdx = css`
     padding: 1.2em;
     overflow: auto;
     border-radius: 3px;
-    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2)
+    background: #292d3e;
+    transition: background-color 0.3s;
   }
 
   :not(pre) > code[class*='language-'],
@@ -65,52 +65,53 @@ const mdx = css`
     padding: 4px 6px;
     margin: 0 0.1em;
     border-radius: 0.3em;
-    color: #212121;
-    background: #f5f5f5;
+    color: #bfc7d5;
+    background: #292d3e;
     white-space: normal;
+    transition: background-color 0.3s;
   }
 
   .attr-name {
-    color: #005cc5;
+    color: #ffcb6b;
   }
   .attr-value {
-    color: #032f62;
+    color: #ff5572;
   }
   .comment, .block-comment, .prolog, .doctype, .cdata {
-    color: #6a737d;
+    color: #697098;
   }
   .property, .number, .function-name, .constant, .symbol, .deleted {
-    color: #6f42c1;
+    color: #82aaff;
   }
   .boolean {
-    color: #005cc5;
+    color: #ff5874;
   }
   .tag {
-    color: #22863a;
+    color: #ff5572;
   }
   .string {
-    color: #032f62;
+    color: #c3e88d;
   }
   .punctuation {
-    color: #24292e;
+    color: #c792ea;
   }
   .selector, .char, .builtin, .inserted {
-    color: #005cc5;
+    color: #89ddff;
   }
   .function {
-    color: #6f42c1;
+    color: #82aaff;
   }
   .operator, .entity, .url, .variable {
-    color: #005cc5;
+    color: #89ddff;
   }
   .keyword {
-    color: #d73a49;
+    color: #ff5572;
   }
   .at-rule, .class-name {
-    color: #e36209;
+    color: #09d3ac;
   }
   .rule {
-    color: #d73a49;
+    color: #ff5572;
   }
   .important {
     font-weight: 400;
@@ -146,9 +147,9 @@ const mdx = css`
     color: #212121;
     font-size: 1rem;
     :hover {
-      color: #3d5afe;
+      color: #ff5252;
     }
   }
 `
 
-export default mdx
+export default dark
