@@ -1,6 +1,6 @@
 import React, { memo, useLayoutEffect, useRef } from 'react'
 
-import { ColorMode } from '../constants'
+import { COLOR_MODE_KEY, ColorMode, UtterancesTheme } from '../constants'
 
 export interface Props {
   repo: string;
@@ -13,7 +13,7 @@ const Utterances: React.FC<Props> = memo(({ repo }) => {
     const [utterances] = document.getElementsByClassName('utterances')
 
     if (!utterances) {
-      const value = localStorage.getItem('colorMode') as ColorMode || ColorMode.LIGHT
+      const value = localStorage.getItem(COLOR_MODE_KEY) as ColorMode || ColorMode.LIGHT
       const script = document.createElement('script')
       const attributes = {
         src: 'https://utteranc.es/client.js',
@@ -21,7 +21,7 @@ const Utterances: React.FC<Props> = memo(({ repo }) => {
         crossOrigin: 'anonymous',
         async: 'true',
         label: 'comment',
-        theme: value === ColorMode.LIGHT ? 'github-light' : 'dark-blue',
+        theme: value === ColorMode.LIGHT ? UtterancesTheme.GITHUB_LIGHT : UtterancesTheme.DARK_BLUE,
         repo,
       }
 
