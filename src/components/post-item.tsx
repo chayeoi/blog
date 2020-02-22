@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { css, jsx, SerializedStyles } from '@emotion/core'
 import dayjs from 'dayjs'
+import { Link } from 'gatsby'
 import _ from 'lodash/fp'
 
 import { ALPHA, PNG } from '../constants'
@@ -16,7 +17,7 @@ const PostItem: React.FC<Props> = ({ post }) => {
 
   return (
     <li css={s.postItem}>
-      <a css={s.anchorBlock} href={post.node.fields.slug}>
+      <Link css={s.link} to={post.node.fields.slug}>
         <h3 css={s.heading}>
           {post.node.frontmatter.title}
         </h3>
@@ -58,7 +59,7 @@ const PostItem: React.FC<Props> = ({ post }) => {
             ), post.node.frontmatter.tags)}
           </ul>
         </div>
-      </a>
+      </Link>
     </li>
   )
 }
@@ -83,7 +84,7 @@ const s = {
     color: ${theme.palette.grey[500]};
     font-size: ${theme.typography.pxToRem(14)};
   `,
-  anchorBlock: (theme: Theme): SerializedStyles => css`
+  link: (theme: Theme): SerializedStyles => css`
     display: flex;
     flex-direction: column;
     width: 100%;
