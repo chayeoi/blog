@@ -6,6 +6,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
 
 import Layout from '../components/layout'
+import Profile from '../components/profile'
 import SEO from '../components/seo'
 import Utterances from '../components/utterances'
 import { CONTAINER_MAX_WIDTH } from '../constants'
@@ -97,6 +98,9 @@ const BlogPost: React.FC<Props> = ({ data }) => {
         </header>
         <div css={s.wrapper}>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
+          <footer>
+            <Profile />
+          </footer>
           <Utterances repo={data.site.siteMetadata.repository.name} />
         </div>
       </article>

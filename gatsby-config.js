@@ -31,6 +31,13 @@ module.exports = {
         { key: 1, value: '\n' },
         { key: 2, value: '음, 그런데 무슨 내용을 더 써야할 지 아직 모르겠.. 나중에 천천히 채워넣도록 하겠습니다. 그럼 이만! 😆' },
       ],
+      name: '김찬연',
+      intro: `
+        하고 싶은 게 넘흐넘흐 많은 90년생 개발자.
+        개인적인 생각, 최근 관심사 또는 새로 알게 된 내용애 대해 포스팅합니다.
+      `,
+      job: 'Developer',
+      region: 'Seoul, Korea',
     },
     siteUrl: 'https://chny.netlify.com',
   },
