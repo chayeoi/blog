@@ -1,11 +1,12 @@
-import { css, SerializedStyles } from '@emotion/core'
+/** @jsx jsx */
+import { css, jsx, SerializedStyles } from '@emotion/core'
 import { graphql, Link, useStaticQuery } from 'gatsby'
-import React from 'react'
+import { memo } from 'react'
 
 import { ALPHA } from '../constants'
 import { Theme } from '../models/Theme'
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC = memo(() => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -39,7 +40,7 @@ const Navbar: React.FC = () => {
       </ul>
     </nav>
   )
-}
+})
 
 const s = {
   menuList: css`
@@ -54,7 +55,6 @@ const s = {
     font-size: ${theme.typography.pxToRem(14)};
     font-weight: 500;
     text-transform: uppercase;
-    transition: color 0.2s, background-color 0.2s;
     :hover, :focus {
       background-color: ${theme.palette.hexToRgb(theme.palette.primary.light, ALPHA)};
     }
