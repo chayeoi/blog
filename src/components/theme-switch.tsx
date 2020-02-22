@@ -3,7 +3,7 @@ import { css, jsx, SerializedStyles } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 import { useEffect } from 'react'
 
-import { ALPHA, ColorMode } from '../constants'
+import { ALPHA, COLOR_MODE_KEY, ColorMode, UtterancesTheme } from '../constants'
 import { useColorMode } from '../hooks'
 import { Theme } from '../models/Theme'
 
@@ -23,12 +23,12 @@ const ThemeSwitch: React.FC = () => {
   useEffect(() => {
     const message = {
       type: 'set-theme',
-      theme: theme.palette.type === ColorMode.LIGHT ? 'github-light' : 'dark-blue',
+      theme: theme.palette.type === ColorMode.LIGHT ? UtterancesTheme.GITHUB_LIGHT : UtterancesTheme.DARK_BLUE,
     }
 
     const iframe = document.querySelector<HTMLIFrameElement>('.utterances-frame')
 
-    const value = localStorage.getItem('colorMode') as ColorMode
+    const value = localStorage.getItem(COLOR_MODE_KEY) as ColorMode
 
     if (iframe && value) {
       iframe.contentWindow?.postMessage(message, 'https://utteranc.es')
