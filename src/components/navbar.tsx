@@ -5,6 +5,7 @@ import { memo } from 'react'
 
 import { ALPHA } from '../constants'
 import { Theme } from '../models/Theme'
+import ThemeSwitch from './theme-switch'
 
 const Navbar: React.FC = memo(() => {
   const data = useStaticQuery(graphql`
@@ -36,6 +37,9 @@ const Navbar: React.FC = memo(() => {
         </li>
         <li>
           <Link css={s.link} to="/about">About</Link>
+        </li>
+        <li>
+          <ThemeSwitch />
         </li>
       </ul>
     </nav>

@@ -1,7 +1,7 @@
 import { Global } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import { ThemeProvider } from 'emotion-theming'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { ColorMode } from '../constants'
 import ColorModeContext from '../contexts/color-mode-context'
@@ -34,6 +34,16 @@ const components: Components = {
 
 const Wrapper: React.FC = ({ children }) => {
   const [colorMode, setColorMode] = useState<ColorMode>(ColorMode.LIGHT)
+
+  useEffect(() => {
+    const value: ColorMode = localStorage.getItem('colorMode') as ColorMode || ColorMode.LIGHT
+
+    setColorMode(value)
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('colorMode', colorMode)
+  }, [colorMode])
 
   return (
     <ColorModeContext.Provider value={[colorMode, setColorMode]}>
