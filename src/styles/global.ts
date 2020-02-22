@@ -238,8 +238,9 @@ const global = (theme: Theme): SerializedStyles => css`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     word-break: keep-all;
+    transition: background-color 0.3s;
   }
-  ${mdx}
+  ${mdx[theme.palette.type]}
 `
 
 export default global
