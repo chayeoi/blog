@@ -185,6 +185,13 @@ module.exports = {
         theme_color: '#3d5afe',
         display: 'standalone',
         icon: 'src/assets/images/logo.png',
+        icons: [
+          {
+            src: `src/assets/images/apple-touch-icon.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
       },
     },
     'gatsby-plugin-offline',
