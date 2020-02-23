@@ -2,9 +2,10 @@ import { css } from '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 
-import { HEADER_MIN_HEIGHT } from '../constants'
+import { CONTENT_LINK, HEADER_MIN_HEIGHT } from '../constants'
 import Footer from './footer'
 import Header from './header'
+import SkipLink from './skip-link'
 
 interface Props {
   children: React.ReactNode;
@@ -23,9 +24,10 @@ const Layout: React.FC<Props> = ({ children }) => {
 
   return (
     <div css={s.root}>
+      <SkipLink />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div css={s.wrapper}>
-        <main css={s.main}>{children}</main>
+        <main id={CONTENT_LINK} css={s.main}>{children}</main>
         <Footer />
       </div>
     </div>

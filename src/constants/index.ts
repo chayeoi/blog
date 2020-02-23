@@ -1,6 +1,7 @@
 export { default as ColorMode } from './color-mode'
 export { default as UtterancesTheme } from './utterances-theme'
 export * from './icons'
+export * from './link'
 export * from './media-types'
 export * from './palette'
 export * from './size'
