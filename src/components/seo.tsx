@@ -115,6 +115,26 @@ const SEO: React.FC<Props> = ({
           content: metaImage,
         },
         {
+          name: 'application-name',
+          content: site.siteMetadata.title,
+        },
+        {
+          name: 'mobile-web-app-capable',
+          content: 'yes',
+        },
+        {
+          name: 'apple-mobile-web-app-capable',
+          content: 'yes',
+        },
+        {
+          name: ' apple-mobile-web-app-title',
+          content: site.siteMetadata.title,
+        },
+        {
+          name: 'apple-mobile-web-app-status-bar-style',
+          content: 'white',
+        },
+        {
           name: 'naver-site-verification',
           content: process.env.NAVER_SITE_VERIFICATION_KEY,
         },
