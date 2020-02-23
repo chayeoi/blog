@@ -1,6 +1,7 @@
 import { css } from '@emotion/core'
 import { graphql } from 'gatsby'
-import React from 'react'
+import _ from 'lodash/fp'
+import React, { useMemo } from 'react'
 
 import Heading from '../components/heading'
 import Intro from '../components/intro'
@@ -14,6 +15,7 @@ interface Props {
   data: {
     site: {
       siteMetadata: {
+        siteUrl: string;
         title: string;
       };
     };
@@ -21,14 +23,28 @@ interface Props {
       edges: Mdx[];
     };
   };
+  location: {
+    pathname: string;
+  };
 }
 
-const HomePage: React.FC<Props> = ({ data }) => {
+const HomePage: React.FC<Props> = ({ data, location }) => {
   const posts = data.allMdx.edges
+
+  const meta = useMemo(() => _.filter(item => Boolean(item.content), [
+    {
+      name: 'keywords',
+      content: '김찬연,chayeoi,chny,웹 개발,웹,리액트,자바스크립트,타입스크립트,React,Javascript,Typescript',
+    },
+  ]), [])
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title="CHNY Blog"
+        url={`${data.site.siteMetadata.siteUrl}${location.pathname}`}
+        meta={meta}
+      />
       <Intro />
       <div css={s.wrapper}>
         <Heading css={s.heading}>
@@ -57,6 +73,7 @@ export const query = graphql`
   query {
     site {
       siteMetadata {
+        siteUrl
         title
       }
     }

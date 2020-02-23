@@ -2,7 +2,7 @@ import { css, SerializedStyles } from '@emotion/core'
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import _ from 'lodash/fp'
-import React from 'react'
+import React, { useMemo } from 'react'
 
 import Heading from '../components/heading'
 import Layout from '../components/layout'
@@ -23,6 +23,7 @@ interface Props {
           title: string;
           content: string;
         };
+        siteUrl: string;
       };
     };
     file: {
@@ -36,9 +37,12 @@ interface Props {
       };
     };
   };
+  location: {
+    pathname: string;
+  };
 }
 
-const AboutPage: React.FC<Props> = ({ data }) => {
+const AboutPage: React.FC<Props> = ({ data, location }) => {
   const phrases = _.compose(
     // @ts-ignore
     _.map.convert({ cap: false })((p: string, index: number): Phrase => ({
@@ -49,9 +53,20 @@ const AboutPage: React.FC<Props> = ({ data }) => {
     _.split('\n'),
   )(data.site.siteMetadata.about.content)
 
+  const meta = useMemo(() => _.filter(item => Boolean(item.content), [
+    {
+      name: 'keywords',
+      content: '김찬연,chayeoi,chny',
+    },
+  ]), [])
+
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO
+        title="About"
+        url={`${data.site.siteMetadata.siteUrl}${location.pathname}`}
+        meta={meta}
+      />
       <div css={s.wrapper}>
         <Heading css={s.heading}>
           소개
@@ -114,6 +129,7 @@ export const query = graphql`
           title
           content
         }
+        siteUrl
       }
     }
     file(relativePath: { eq: "images/profile.jpg" }) {
