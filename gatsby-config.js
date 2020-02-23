@@ -38,7 +38,7 @@ module.exports = {
       job: 'Developer',
       region: 'Seoul, Korea',
     },
-    siteUrl: 'https://chny.netlify.com',
+    siteUrl: 'https://chny.world',
   },
   plugins: [
     'gatsby-plugin-emotion',
