@@ -23,7 +23,7 @@ const SEO: React.FC<Props> = ({
   type = 'website',
   url = '',
 }) => {
-  const { site } = useStaticQuery(
+  const { site, file } = useStaticQuery(
     graphql`
       query {
         site {
@@ -37,6 +37,9 @@ const SEO: React.FC<Props> = ({
               name
             }
           }
+        }
+        file(relativePath: {eq: "images/splash.png"}) {
+          publicURL
         }
       }
     `,
@@ -55,6 +58,10 @@ const SEO: React.FC<Props> = ({
         {
           rel: 'canonical',
           href: url,
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: file.publicURL,
         },
       ].concat(link)}
       meta={[
