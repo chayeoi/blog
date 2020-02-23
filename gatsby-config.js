@@ -8,8 +8,9 @@ const currentYear = new Date().getFullYear()
 module.exports = {
   siteMetadata: {
     title: 'CHNY',
-    description: 'My Personal Blog',
-    author: '@chayeoi',
+    description: '개발자 김찬연 TECH 블로그',
+    image: 'https://repository-images.githubusercontent.com/238482693/10065400-563f-11ea-9f76-928d767a061d',
+    author: '김찬연',
     repository: {
       name: 'chayeoi/blog',
       url: 'https://github.com/chayeoi/blog',
@@ -24,6 +25,12 @@ module.exports = {
       { name: 'rss', value: 'https://chny.world/rss', href: 'https://feedly.com/i/subscription/feed/https://chny.world/rss.xml' },
       // { name: 'codepen', value: 'chayeoi' },
     ],
+    facebook: {
+      author: 'https://www.facebook.com/chayeoi',
+    },
+    twitter: {
+      name: '@chayeoi',
+    },
     about: {
       title: '개발자 김찬연',
       content: `

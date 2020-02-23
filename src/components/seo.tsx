@@ -4,12 +4,25 @@ import Helmet from 'react-helmet'
 
 interface Props {
   description?: string;
+  image?: string;
   lang?: string;
+  link?: any[];
   meta?: any[];
   title: string;
+  type?: 'website' | 'article';
+  url?: string;
 }
 
-const SEO: React.FC<Props> = ({ description = '', lang = 'ko', meta = [], title }) => {
+const SEO: React.FC<Props> = ({
+  description = '',
+  image = '',
+  lang = 'ko',
+  link = [],
+  meta = [],
+  title,
+  type = 'website',
+  url = '',
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -17,7 +30,12 @@ const SEO: React.FC<Props> = ({ description = '', lang = 'ko', meta = [], title 
           siteMetadata {
             title
             description
+            image
             author
+            siteUrl
+            twitter {
+              name
+            }
           }
         }
       }
@@ -25,16 +43,28 @@ const SEO: React.FC<Props> = ({ description = '', lang = 'ko', meta = [], title 
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaImage = image || site.siteMetadata.image
+  const metaUrl = url || site.siteMetadata.siteUrl
 
   return (
     <Helmet
       htmlAttributes={{ lang }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title as string}`}
+      link={[
+        {
+          rel: 'canonical',
+          href: url,
+        },
+      ].concat(link)}
       meta={[
         {
           name: 'description',
           content: metaDescription,
+        },
+        {
+          name: 'author',
+          content: site.siteMetadata.author,
         },
         {
           property: 'og:title',
@@ -45,8 +75,24 @@ const SEO: React.FC<Props> = ({ description = '', lang = 'ko', meta = [], title 
           content: metaDescription,
         },
         {
+          property: 'og:image',
+          content: metaImage,
+        },
+        {
           property: 'og:type',
-          content: 'website',
+          content: type,
+        },
+        {
+          property: 'og:site_name',
+          content: site.siteMetadata.title,
+        },
+        {
+          property: 'og:url',
+          content: metaUrl,
+        },
+        {
+          property: 'og:locale',
+          content: 'ko_KR',
         },
         {
           name: 'twitter:card',
@@ -54,7 +100,7 @@ const SEO: React.FC<Props> = ({ description = '', lang = 'ko', meta = [], title 
         },
         {
           name: 'twitter:creator',
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.twitter.name,
         },
         {
           name: 'twitter:title',
@@ -63,6 +109,14 @@ const SEO: React.FC<Props> = ({ description = '', lang = 'ko', meta = [], title 
         {
           name: 'twitter:description',
           content: metaDescription,
+        },
+        {
+          name: 'twitter:image',
+          content: metaImage,
+        },
+        {
+          name: 'naver-site-verification',
+          content: process.env.GATSBY_NAVER_SITE_VERIFICATION_KEY,
         },
       ].concat(meta)}
     />

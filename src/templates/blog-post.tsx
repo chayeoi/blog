@@ -3,7 +3,8 @@ import dayjs from 'dayjs'
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import React from 'react'
+import _ from 'lodash/fp'
+import React, { useMemo } from 'react'
 
 import Layout from '../components/layout'
 import Profile from '../components/profile'
@@ -40,32 +41,77 @@ interface Props {
     };
     site: {
       siteMetadata: {
+        facebook: {
+          author: string;
+        };
         repository: {
           name: string;
         };
+        siteUrl: string;
       };
     };
   };
+  location: {
+    pathname: string;
+  };
 }
 
-const BlogPost: React.FC<Props> = ({ data }) => {
-  const isModified = data.mdx.frontmatter.updatedAt && data.mdx.frontmatter.createdAt !== data.mdx.frontmatter.updatedAt
-  const hasCover = Boolean(data.mdx.frontmatter.cover)
+const BlogPost: React.FC<Props> = ({ data, location }) => {
+  const {
+    title,
+    description,
+    updatedAt,
+    createdAt,
+    cover,
+    tags,
+  } = data.mdx.frontmatter
+  const isModified = updatedAt && createdAt !== updatedAt
+  const hasCover = Boolean(cover)
+  const publicURL = cover?.publicURL
+  const imageUrl = publicURL
+    ? `${data.site.siteMetadata.siteUrl}${publicURL}`
+    : ''
+
+  const meta = useMemo(() => _.filter(item => Boolean(item.content), [
+    {
+      property: 'article:author',
+      content: data.site.siteMetadata.facebook.author,
+    },
+    {
+      property: 'article:published_time',
+      content: createdAt,
+    },
+    {
+      property: 'article:modified_time',
+      content: updatedAt,
+    },
+    {
+      name: 'keywords',
+      content: _.join(',', tags),
+    },
+  ]), [createdAt, tags, updatedAt, data.site.siteMetadata.facebook.author])
 
   return (
     <Layout>
-      <SEO title={data.mdx.frontmatter.title} />
+      <SEO
+        title={title}
+        description={description}
+        image={imageUrl}
+        type="article"
+        url={`${data.site.siteMetadata.siteUrl}${location.pathname}`}
+        meta={meta}
+      />
       <article css={s.article}>
         <header css={s.header}>
           <div css={s.container}>
-            <h1 css={s.heading}>{data.mdx.frontmatter.title}</h1>
+            <h1 css={s.heading}>{title}</h1>
             <p css={s.description}>
-              {data.mdx.frontmatter.description}
+              {description}
             </p>
             <ul css={s.dateList}>
               <li>
-                <time dateTime={data.mdx.frontmatter.createdAt}>
-                  {dayjs(data.mdx.frontmatter.createdAt).format('YYYY년 MM월 DD일')}
+                <time dateTime={createdAt}>
+                  {dayjs(createdAt).format('YYYY년 MM월 DD일')}
                 </time>
                 {isModified && (
                   <span>
@@ -76,8 +122,8 @@ const BlogPost: React.FC<Props> = ({ data }) => {
               </li>
               {isModified && (
                 <li>
-                  <time dateTime={data.mdx.frontmatter.updatedAt}>
-                    {dayjs(data.mdx.frontmatter.updatedAt).format('YYYY년 MM월 DD일')}
+                  <time dateTime={updatedAt}>
+                    {dayjs(updatedAt).format('YYYY년 MM월 DD일')}
                   </time>
                   <span>
                     {' '}
@@ -90,7 +136,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
           {hasCover
             ? (
               <div css={s.cover}>
-                <Image css={s.image} fluid={data.mdx.frontmatter.cover?.childImageSharp.fluid} alt=""/>
+                <Image css={s.image} fluid={cover?.childImageSharp.fluid} alt=""/>
               </div>
             ) : (
               <div css={s.placeholder} />
@@ -208,9 +254,13 @@ export const query = graphql`
     }
     site {
       siteMetadata {
+        facebook {
+          author
+        }
         repository {
           name
         }
+        siteUrl
       }
     }
   }
