@@ -68,6 +68,16 @@ const s = {
       opacity 0.3s,
       border 0.3s,
       background-color 0.3s;
+    ::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      transform: translateY(-100%);
+      background: ${theme.palette.background.paper};
+    }
   `,
   title: css`
     font-size: 2.25rem;

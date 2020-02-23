@@ -49,6 +49,8 @@ const SEO: React.FC<Props> = ({
   const metaImage = image || site.siteMetadata.image
   const metaUrl = url || site.siteMetadata.siteUrl
 
+  console.log('strinig!', `${site.siteMetadata.siteUrl as string}${file.publicURL as string}`)
+
   return (
     <Helmet
       htmlAttributes={{ lang }}
@@ -61,7 +63,38 @@ const SEO: React.FC<Props> = ({
         },
         {
           rel: 'apple-touch-startup-image',
-          href: file.publicURL,
+          href: `${site.siteMetadata.siteUrl as string}${file.publicURL as string}`,
+          media: '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: `${site.siteMetadata.siteUrl as string}${file.publicURL as string}`,
+          media: '(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: `${site.siteMetadata.siteUrl as string}${file.publicURL as string}`,
+          media: '(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: `${site.siteMetadata.siteUrl as string}${file.publicURL as string}`,
+          media: '(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: `${site.siteMetadata.siteUrl as string}${file.publicURL as string}`,
+          media: '(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: `${site.siteMetadata.siteUrl as string}${file.publicURL as string}`,
+          media: '(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: `${site.siteMetadata.siteUrl as string}${file.publicURL as string}`,
+          media: '(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)"',
         },
       ].concat(link)}
       meta={[
@@ -133,13 +166,13 @@ const SEO: React.FC<Props> = ({
           name: 'apple-mobile-web-app-capable',
           content: 'yes',
         },
+        // {
+        //   name: 'apple-mobile-web-app-status-bar-style',
+        //   content: 'default',
+        // },
         {
           name: ' apple-mobile-web-app-title',
           content: site.siteMetadata.title,
-        },
-        {
-          name: 'apple-mobile-web-app-status-bar-style',
-          content: 'white',
         },
         {
           name: 'naver-site-verification',

@@ -2,6 +2,8 @@
 import { css, jsx, SerializedStyles } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 import { useEffect } from 'react'
+import React from 'react'
+import Helmet from 'react-helmet'
 
 import { ALPHA, COLOR_MODE_KEY, ColorMode, UtterancesTheme } from '../constants'
 import { useColorMode } from '../hooks'
@@ -10,7 +12,7 @@ import { Theme } from '../models/Theme'
 const ThemeSwitch: React.FC = () => {
   const theme: Theme = useTheme()
 
-  const [, setColorMode] = useColorMode()
+  const [colorMode, setColorMode] = useColorMode()
 
   const handleClick = (): void => {
     setColorMode((prevColorMode: ColorMode): ColorMode => (
@@ -35,14 +37,24 @@ const ThemeSwitch: React.FC = () => {
     }
   }, [theme.palette.type])
 
+  console.log('colorMode:', colorMode)
+
   return (
-    <button
-      css={s.button}
-      type="button"
-      onClick={handleClick}
-    >
-      {theme.palette.type}
-    </button>
+    <React.Fragment>
+      <Helmet
+        meta={[{
+          name: 'apple-mobile-web-app-status-bar-style',
+          content: colorMode === ColorMode.LIGHT ? 'default' : 'black',
+        }]}
+      />
+      <button
+        css={s.button}
+        type="button"
+        onClick={handleClick}
+      >
+        {theme.palette.type}
+      </button>
+    </React.Fragment>
   )
 }
 

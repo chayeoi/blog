@@ -179,24 +179,24 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'CHNY Blog',
-        short_name: 'CHNY',
+        short_name: 'chny.world',
         start_url: '/',
-        background_color: '#3d5afe',
-        theme_color: '#3d5afe',
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
         display: 'standalone',
-        icon: 'src/assets/images/logo.png',
-        icons: [
-          {
-            src: `images/logo.png`,
-            sizes: `48x48`,
-            type: `image/png`,
-          },
-          {
-            src: `images/apple-touch-icon.png`,
-            sizes: `512x512`,
-            type: `image/png`,
-          },
-        ],
+        icon: 'src/assets/images/icon.png',
+        // icons: [
+        //   {
+        //     src: `images/logo.png`,
+        //     sizes: `48x48`,
+        //     type: `image/png`,
+        //   },
+        //   {
+        //     src: `images/apple-touch-icon.png`,
+        //     sizes: `512x512`,
+        //     type: `image/png`,
+        //   },
+        // ],
       },
     },
     'gatsby-plugin-offline',
