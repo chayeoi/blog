@@ -186,18 +186,7 @@ module.exports = {
         theme_color: '#3d5afe',
         display: 'standalone',
         icon: 'src/assets/images/logo.png',
-        icons: [
-          {
-            src: `images/logo.png`,
-            sizes: `48x48`,
-            type: `image/png`,
-          },
-          {
-            src: `images/apple-touch-icon.png`,
-            sizes: `512x512`,
-            type: `image/png`,
-          },
-        ],
+        include_favicon: false,
       },
     },
     'gatsby-plugin-offline',
