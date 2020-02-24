@@ -179,8 +179,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'CHNY Blog',
-        short_name: 'CHNY',
+        name: 'CHNY.WORLD',
+        short_name: 'chny.world',
         start_url: '/',
         background_color: '#3d5afe',
         theme_color: '#3d5afe',
