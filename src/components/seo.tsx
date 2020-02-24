@@ -23,7 +23,7 @@ const SEO: React.FC<Props> = ({
   type = 'website',
   url = '',
 }) => {
-  const { site, file } = useStaticQuery(
+  const { site, file, favicon } = useStaticQuery(
     graphql`
       query {
         site {
@@ -41,6 +41,9 @@ const SEO: React.FC<Props> = ({
         file(relativePath: {eq: "images/splash.png"}) {
           publicURL
         }
+        favicon: file(relativePath: { eq: "images/favicon.png" }) {
+          publicURL
+        }
       }
     `,
   )
@@ -56,6 +59,10 @@ const SEO: React.FC<Props> = ({
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title as string}`}
       link={[
+        {
+          rel: 'icon',
+          href: favicon.publicURL,
+        },
         {
           rel: 'canonical',
           href: url,
@@ -127,20 +134,16 @@ const SEO: React.FC<Props> = ({
           content: site.siteMetadata.title,
         },
         {
-          name: 'mobile-web-app-capable',
-          content: 'yes',
+          name: ' apple-mobile-web-app-title',
+          content: site.siteMetadata.title,
         },
         {
           name: 'apple-mobile-web-app-capable',
           content: 'yes',
         },
         {
-          name: ' apple-mobile-web-app-title',
-          content: site.siteMetadata.title,
-        },
-        {
           name: 'apple-mobile-web-app-status-bar-style',
-          content: 'white',
+          content: 'default',
         },
         {
           name: 'naver-site-verification',
