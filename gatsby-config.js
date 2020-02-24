@@ -7,7 +7,8 @@ const currentYear = new Date().getFullYear()
 
 module.exports = {
   siteMetadata: {
-    title: 'CHNY',
+    name: 'CHNY',
+    title: 'CHNY.WORLD',
     description: '개발자 김찬연 TECH 블로그',
     image: 'https://repository-images.githubusercontent.com/238482693/10065400-563f-11ea-9f76-928d767a061d',
     author: '김찬연',

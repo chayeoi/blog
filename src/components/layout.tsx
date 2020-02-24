@@ -16,7 +16,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
+          name
         }
       }
     }
@@ -25,7 +25,7 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <div css={s.root}>
       <SkipLink />
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.name} />
       <div css={s.wrapper}>
         <main id={CONTENT_LINK} css={s.main}>{children}</main>
         <Footer />
