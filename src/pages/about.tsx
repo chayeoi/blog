@@ -63,7 +63,7 @@ const AboutPage: React.FC<Props> = ({ data, location }) => {
   return (
     <Layout>
       <SEO
-        title="About"
+        title="소개"
         url={`${data.site.siteMetadata.siteUrl}${location.pathname}`}
         meta={meta}
       />

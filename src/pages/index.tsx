@@ -41,7 +41,6 @@ const HomePage: React.FC<Props> = ({ data, location }) => {
   return (
     <Layout>
       <SEO
-        title="CHNY Blog"
         url={`${data.site.siteMetadata.siteUrl}${location.pathname}`}
         meta={meta}
       />
