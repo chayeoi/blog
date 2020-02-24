@@ -8,7 +8,7 @@ interface Props {
   lang?: string;
   link?: any[];
   meta?: any[];
-  title: string;
+  title?: string;
   type?: 'website' | 'article';
   url?: string;
 }
@@ -52,6 +52,7 @@ const SEO: React.FC<Props> = ({
   return (
     <Helmet
       htmlAttributes={{ lang }}
+      defaultTitle={site.siteMetadata.title}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title as string}`}
       link={[
@@ -75,7 +76,7 @@ const SEO: React.FC<Props> = ({
         },
         {
           property: 'og:title',
-          content: title,
+          content: title ? `${title} | ${site.siteMetadata.title as string}` : site.siteMetadata.title,
         },
         {
           property: 'og:description',
