@@ -2,6 +2,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
 
+import { splash } from '../assets/images'
+
 interface Props {
   description?: string;
   image?: string;
@@ -23,7 +25,7 @@ const SEO: React.FC<Props> = ({
   type = 'website',
   url = '',
 }) => {
-  const { site, file, favicon } = useStaticQuery(
+  const { site, favicon } = useStaticQuery(
     graphql`
       query {
         site {
@@ -37,9 +39,6 @@ const SEO: React.FC<Props> = ({
               name
             }
           }
-        }
-        file(relativePath: {eq: "images/splash.png"}) {
-          publicURL
         }
         favicon: file(relativePath: { eq: "images/favicon.png" }) {
           publicURL
@@ -69,7 +68,53 @@ const SEO: React.FC<Props> = ({
         },
         {
           rel: 'apple-touch-startup-image',
-          href: file.publicURL,
+          href: splash.iphone5,
+          media: '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: splash.iphone6,
+          media: '(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: splash.iphoneplus,
+          media: '(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: splash.iphonex,
+          media: '(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: splash.iphonexr,
+          media: '(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: splash.iphonexsmax,
+          media: '(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: splash.ipad,
+          media: '(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: splash.ipadpro1,
+          media: '(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: splash.ipadpro2,
+          media: '(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)',
+        },
+        {
+          rel: 'apple-touch-startup-image',
+          href: splash.ipadpro3,
+          media: '(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)',
         },
       ].concat(link)}
       meta={[
