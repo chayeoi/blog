@@ -5,6 +5,18 @@ import { hexToRgb, pxToRem } from '../utils'
 
 const common = {
   palette: {
+    primary: {
+      contrastText: '#ffffff',
+      light: '#448aff',
+      main: '#2979ff',
+      dark: '#2962ff',
+    },
+    secondary: {
+      contrastText: '#ffffff',
+      light: '#ff8a80',
+      main: '#ff5252',
+      dark: '#ff1744',
+    },
     grey: {
       50: '#fafafa',
       100: '#f5f5f5',
@@ -59,18 +71,6 @@ const theme: ThemeMap = {
     palette: {
       ...common.palette,
       type: 'light',
-      primary: {
-        contrastText: '#ffffff',
-        light: '#536dfe',
-        main: '#3d5afe',
-        dark: '#304ffe',
-      },
-      secondary: {
-        contrastText: '#ffffff',
-        light: '#ff8a80',
-        main: '#ff5252',
-        dark: '#ff1744',
-      },
       background: {
         default: 'transparent',
         paper: '#ffffff',
@@ -88,18 +88,6 @@ const theme: ThemeMap = {
     palette: {
       ...common.palette,
       type: 'dark',
-      primary: {
-        contrastText: '#ffffff',
-        light: '#ff8a80',
-        main: '#ff5252',
-        dark: '#ff1744',
-      },
-      secondary: {
-        contrastText: '#ffffff',
-        light: '#536dfe',
-        main: '#3d5afe',
-        dark: '#304ffe',
-      },
       background: {
         default: '#060606',
         paper: '#060606',
