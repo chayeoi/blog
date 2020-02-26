@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import { graphql } from 'gatsby'
 import _ from 'lodash/fp'
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
 
 import Heading from '../components/heading'
 import Intro from '../components/intro'
@@ -37,6 +37,10 @@ const HomePage: React.FC<Props> = ({ data, location }) => {
       content: '김찬연,chayeoi,chny,웹 개발,웹,리액트,자바스크립트,타입스크립트,React,Javascript,Typescript',
     },
   ]), [])
+
+  useEffect(() => {
+    history.scrollRestoration = 'auto'
+  }, [])
 
   return (
     <Layout>
