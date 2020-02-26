@@ -190,10 +190,6 @@ const SEO: React.FC<Props> = ({
           name: 'apple-mobile-web-app-status-bar-style',
           content: 'default',
         },
-        {
-          name: 'naver-site-verification',
-          content: process.env.GATSBY_NAVER_SITE_VERIFICATION_KEY,
-        },
       ].concat(meta)}
     />
   )
