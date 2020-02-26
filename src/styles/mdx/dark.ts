@@ -146,8 +146,8 @@ const dark = css`
   .anchor.after, .anchor.before {
     color: #212121;
     font-size: 1rem;
-    :hover {
-      color: #ff5252;
+    :hover, :focus {
+      color: #2979ff;
     }
   }
 `

@@ -146,8 +146,8 @@ const light = css`
   .anchor.after, .anchor.before {
     color: #212121;
     font-size: 1rem;
-    :hover {
-      color: #3d5afe;
+    :hover, :focus {
+      color: #2979ff;
     }
   }
 `
