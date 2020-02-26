@@ -9,13 +9,21 @@ import React, { useMemo } from 'react'
 import Layout from '../components/layout'
 import Profile from '../components/profile'
 import SEO from '../components/seo'
+import Sticky from '../components/sticky'
+import TableOfContents from '../components/table-of-contents'
 import Utterances from '../components/utterances'
 import { CONTAINER_MAX_WIDTH } from '../constants'
 import { Theme } from '../models/Theme'
+import UnstructuredTocItem from '../models/UnstructuredTocItem'
+import { getToc } from '../utils'
 
 interface Props {
   data: {
     mdx: {
+      body: string;
+      tableOfContents: {
+        items: UnstructuredTocItem[];
+      };
       frontmatter: {
         title: string;
         description: string;
@@ -37,7 +45,6 @@ interface Props {
           };
         };
       };
-      body: string;
     };
     site: {
       siteMetadata: {
@@ -71,6 +78,8 @@ const BlogPost: React.FC<Props> = ({ data, location }) => {
   const imageUrl = publicURL
     ? `${data.site.siteMetadata.siteUrl}${publicURL}`
     : ''
+
+  const toc = useMemo(() => getToc(data.mdx.tableOfContents.items, 3), [data.mdx.tableOfContents.items])
 
   const meta = useMemo(() => _.filter(item => Boolean(item.content), [
     {
@@ -132,6 +141,11 @@ const BlogPost: React.FC<Props> = ({ data, location }) => {
                 </li>
               )}
             </ul>
+            <div css={s.toc}>
+              <Sticky top={112}>
+                <TableOfContents toc={toc} />
+              </Sticky>
+            </div>
           </div>
           {hasCover
             ? (
@@ -161,12 +175,11 @@ const s = {
   `,
   header: (theme: Theme): SerializedStyles => css`
     position: relative;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     height: 360px;
-    color: #fff;
+    color: #ffffff;
     ::before {
       content: '';
       position: absolute;
@@ -179,6 +192,7 @@ const s = {
     }
   `,
   container: css`
+    position: relative;
     width: 100%;
     padding: 24px 16px;
     max-width: ${CONTAINER_MAX_WIDTH}px;
@@ -221,6 +235,15 @@ const s = {
     font-weight: 300;
     text-align: right;
   `,
+  toc: (theme: Theme): SerializedStyles => css`
+    position: absolute;
+    left: 100%;
+    top: calc(100% + 96px);
+    margin-left: 1.5rem;
+    ${theme.breakpoints.media.xl} {
+      margin-left: 4.5rem;
+    }
+  `,
   wrapper: css`
     max-width: ${CONTAINER_MAX_WIDTH}px;
     margin: 0 auto;
@@ -231,8 +254,8 @@ const s = {
 export const query = graphql`
   query BlogPostQuery($id: String) {
     mdx(id: { eq: $id }) {
-      id
       body
+      tableOfContents
       frontmatter {
         title
         description
