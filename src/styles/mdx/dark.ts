@@ -4,7 +4,7 @@ const dark = css`
   @import url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css');
 
   .gatsby-highlight-code-line {
-    background-color: #212533;
+    background-color: #010b12;
     display: block;
     margin-right: -1.2em;
     margin-left: -1.2em;
@@ -52,7 +52,7 @@ const dark = css`
     padding: 1.2em;
     overflow: auto;
     border-radius: 3px;
-    background: #292d3e;
+    background: #191919;
     transition: background-color 0.3s;
   }
 
@@ -66,7 +66,7 @@ const dark = css`
     margin: 0 0.1em;
     border-radius: 0.3em;
     color: #bfc7d5;
-    background: #292d3e;
+    background: #191919;
     white-space: normal;
     transition: background-color 0.3s;
   }
@@ -80,8 +80,15 @@ const dark = css`
   .comment, .block-comment, .prolog, .doctype, .cdata {
     color: #697098;
   }
-  .property, .number, .function-name, .constant, .symbol, .deleted {
+  .function-name, .constant, .deleted {
     color: #82aaff;
+  }
+  .token.symbol,
+  .token.property {
+    color: #80cbc4;
+  }
+  .number {
+    color: #f78c6c;
   }
   .boolean {
     color: #ff5874;
@@ -90,7 +97,7 @@ const dark = css`
     color: #ff5572;
   }
   .string {
-    color: #c3e88d;
+    color: #addb67;
   }
   .punctuation {
     color: #c792ea;

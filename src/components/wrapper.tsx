@@ -7,6 +7,7 @@ import { COLOR_MODE_KEY, ColorMode } from '../constants'
 import ColorModeContext from '../contexts/color-mode-context'
 import global from '../styles/global'
 import theme from '../styles/theme'
+import Background from './background'
 import * as MDXComponents from './mdx-components'
 
 interface Components {
@@ -33,7 +34,10 @@ const components: Components = {
 }
 
 const Wrapper: React.FC = ({ children }) => {
-  const [colorMode, setColorMode] = useState<ColorMode>(ColorMode.LIGHT)
+  const [colorMode, setColorMode] = useState<ColorMode>((typeof window !== 'undefined' && window.localStorage.getItem(COLOR_MODE_KEY) as ColorMode)
+  || ColorMode.LIGHT)
+
+  console.log('colorMode:', colorMode)
 
   useEffect(() => {
     const value: ColorMode = localStorage.getItem(COLOR_MODE_KEY) as ColorMode || ColorMode.LIGHT
@@ -49,8 +53,10 @@ const Wrapper: React.FC = ({ children }) => {
     <ColorModeContext.Provider value={[colorMode, setColorMode]}>
       <ThemeProvider theme={theme[colorMode]}>
         <MDXProvider components={components}>
-          <Global styles={global} />
-          {children}
+          <Background>
+            <Global styles={global} />
+            {children}
+          </Background>
         </MDXProvider>
       </ThemeProvider>
     </ColorModeContext.Provider>

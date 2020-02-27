@@ -208,7 +208,7 @@ const s = {
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: -100;
+    z-index: 0;
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
