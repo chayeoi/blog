@@ -1,10 +1,16 @@
 import { css } from '@emotion/core'
 
+/**
+ * sdras/night-owl-vscode-theme
+ * https://github.com/sdras/night-owl-vscode-theme
+ * customized by chayeoi
+ */
+
 const dark = css`
   @import url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css');
 
   .gatsby-highlight-code-line {
-    background-color: #212533;
+    background-color: #023751;
     display: block;
     margin-right: -1.2em;
     margin-left: -1.2em;
@@ -18,7 +24,7 @@ const dark = css`
 
   code[class*='language-'],
   pre[class*='language-'] {
-    color: #bfc7d5;
+    color: #d6deeb;
     background: none;
     font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
     text-align: left;
@@ -52,7 +58,7 @@ const dark = css`
     padding: 1.2em;
     overflow: auto;
     border-radius: 3px;
-    background: #292d3e;
+    background: #011627;
     transition: background-color 0.3s;
   }
 
@@ -65,82 +71,84 @@ const dark = css`
     padding: 4px 6px;
     margin: 0 0.1em;
     border-radius: 0.3em;
-    color: #bfc7d5;
-    background: #292d3e;
+    color: #d6deeb;
+    background: #011627;
     white-space: normal;
     transition: background-color 0.3s;
   }
 
-  .attr-name {
-    color: #ffcb6b;
+  .changed {
+    color: #a2bffc;
+    font-style: italic;
   }
-  .attr-value {
-    color: #ff5572;
+
+  .deleted {
+    color: rgba(239, 83, 80, 0.56);
+    font-style: italic;
   }
-  .comment, .block-comment, .prolog, .doctype, .cdata {
-    color: #697098;
+
+  .inserted, .attr-name {
+    color: #addb67;
+    font-style: italic;
   }
-  .property, .number, .function-name, .constant, .symbol, .deleted {
+
+  .comment, .block-comment, .prolog, .cdata {
+    color: #637777;
+    font-style: italic;
+  }
+
+  .string, .url {
+    color: #addb67;
+  }
+
+  .variable {
+    color: #d6deeb;
+  }
+
+  .number {
+    color: #f78c6c;
+  }
+
+  .builtin, .char, .constant, .function {
     color: #82aaff;
   }
-  .boolean {
-    color: #ff5874;
-  }
-  .tag {
-    color: #ff5572;
-  }
-  .string {
-    color: #c3e88d;
-  }
+
   .punctuation {
     color: #c792ea;
   }
-  .selector, .char, .builtin, .inserted {
-    color: #89ddff;
-  }
-  .function {
-    color: #82aaff;
-  }
-  .operator, .entity, .url, .variable {
-    color: #89ddff;
-  }
-  .keyword {
-    color: #ff5572;
-  }
-  .at-rule, .class-name {
-    color: #09d3ac;
-  }
-  .rule {
-    color: #ff5572;
-  }
-  .important {
-    font-weight: 400;
-  }
-  .bold {
-    font-weight: bold;
-  }
-  .italic {
+
+  .selector, .doctype {
+    color: #c792ea;
     font-style: italic;
   }
+
+  .class-name {
+    color: #ffcb8b;
+  }
+
+  .tag, .operator, .keyword {
+    color: #7fdbca;
+  }
+
+  .boolean {
+    color: #ff5874;
+  }
+
+  .property {
+    color: #80cbc4;
+  }
+
   .namespace {
-    opacity: 0.7;
+    color: #b2ccd6;
   }
 
+   .attr-value {
+     color: #82aaff;
+   }
 
-  /* pre > code.highlight {
-    outline: .4em solid #FF7E7B;
-    outline-offset: .4em;
-  }
-  .line-numbers .line-numbers-rows {
-    border-right-color: #5C6975;
-  }
-  .line-numbers-rows > span:before {
-    color: #74818D;
-  }
-  .line-highlight {
-    background: #E6ECF133;
-    background: linear-gradient(to right, #E6ECF133 70%, #E6ECF100);
-  } */
+   .important {
+     color: #ff5572;
+   }
 
   /* Anchor */
   .anchor.after, .anchor.before {
