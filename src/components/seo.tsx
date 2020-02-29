@@ -1,8 +1,10 @@
+import { useTheme } from 'emotion-theming'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
 
 import { splash } from '../assets/images'
+import { Theme } from '../models/Theme'
 
 interface Props {
   description?: string;
@@ -46,6 +48,8 @@ const SEO: React.FC<Props> = ({
       }
     `,
   )
+
+  const theme: Theme = useTheme()
 
   const metaDescription = description || site.siteMetadata.description
   const metaImage = image || site.siteMetadata.image
@@ -189,6 +193,10 @@ const SEO: React.FC<Props> = ({
         {
           name: 'apple-mobile-web-app-status-bar-style',
           content: 'default',
+        },
+        {
+          name: 'theme-color',
+          content: theme.palette.background.paper,
         },
       ].concat(meta)}
     />
