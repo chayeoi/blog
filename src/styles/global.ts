@@ -240,6 +240,14 @@ const global = (theme: Theme): SerializedStyles => css`
     word-break: keep-all;
     transition: background-color 0.3s;
   }
+
+  ::-moz-selection {
+    background: ${theme.palette.primary.light};
+  }
+  ::selection {
+    background: ${theme.palette.primary.light};
+  }
+
   ${mdx[theme.palette.type]}
 `
 
