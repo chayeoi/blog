@@ -1,5 +1,11 @@
 import { css } from '@emotion/core'
 
+/**
+ * sdras/night-owl-vscode-theme
+ * https://github.com/sdras/night-owl-vscode-theme
+ * customized by chayeoi
+ */
+
 const light = css`
   @import url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css');
 
@@ -18,7 +24,7 @@ const light = css`
 
   code[class*='language-'],
   pre[class*='language-'] {
-    color: #24292e;
+    color: #403f53;
     background: none;
     font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
     text-align: left;
@@ -52,7 +58,7 @@ const light = css`
     padding: 1.2em;
     overflow: auto;
     border-radius: 3px;
-    background: #fafafa;
+    background: #fbfbfb;
     transition: background-color 0.3s;
   }
 
@@ -71,76 +77,66 @@ const light = css`
     transition: background-color 0.3s;
   }
 
-  .attr-name {
-    color: #005cc5;
-  }
-  .attr-value {
-    color: #032f62;
-  }
-  .comment, .block-comment, .prolog, .doctype, .cdata {
-    color: #6a737d;
-  }
-  .property, .number, .function-name, .constant, .symbol, .deleted {
-    color: #6f42c1;
-  }
-  .boolean {
-    color: #005cc5;
-  }
-  .tag {
-    color: #22863a;
-  }
-  .string {
-    color: #032f62;
-  }
-  .punctuation {
-    color: #24292e;
-  }
-  .selector, .char, .builtin, .inserted {
-    color: #005cc5;
-  }
-  .function {
-    color: #6f42c1;
-  }
-  .operator, .entity, .url, .variable {
-    color: #005cc5;
-  }
-  .keyword {
-    color: #d73a49;
-  }
-  .at-rule, .class-name {
-    color: #e36209;
-  }
-  .rule {
-    color: #d73a49;
-  }
-  .important {
-    font-weight: 400;
-  }
-  .bold {
-    font-weight: bold;
-  }
-  .italic {
+  .changed {
+    color: #a2bffc;
     font-style: italic;
   }
-  .namespace {
-    opacity: 0.7;
+
+  .deleted {
+    color: rgba(239, 83, 80, 0.56);
+    font-style: italic;
   }
 
+  .inserted, .attr-name {
+    color: #4876d6;
+    font-style: italic;
+  }
 
-  /* pre > code.highlight {
-    outline: .4em solid #FF7E7B;
-    outline-offset: .4em;
+  .comment, .block-comment, .prolog, .cdata {
+    color: #989fb1;
+    font-style: italic;
   }
-  .line-numbers .line-numbers-rows {
-    border-right-color: #5C6975;
+
+  .string, .builtin, .char, .constant, .url {
+    color: #4875d6;
   }
-  .line-numbers-rows > span:before {
-    color: #74818D;
+
+  .variable {
+    color: #c96765;
   }
-  .line-highlight {
-    background: #E6ECF133;
-    background: linear-gradient(to right, #E6ECF133 70%, #E6ECF100);
-  } */
+
+  .number {
+    color: #aa0982;
+  }
+
+  .punctuation {
+    color: #994cc3;
+  }
+
+  .function {
+    color: #994cc3;
+  }
+
+  .selector, .doctype {
+    color: #994cc3;
+    font-style: italic;
+  }
+
+  .class-name {
+    color: #111111;
+  }
+
+  .tag {
+    color: #994cc3;
+  }
+
+  .operator, .property, .keyword, .namespace {
+    color: #0c969b;
+  }
+
+  .boolean {
+    color: #bc5454;
+  }
 
   /* Anchor */
   .anchor.after, .anchor.before {
