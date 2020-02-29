@@ -62,7 +62,7 @@ const s = {
     min-height: ${HEADER_MIN_HEIGHT}px;
     padding: 24px 16px;
     background: ${theme.palette.background.paper};
-    border-bottom: 1px solid ${theme.palette.grey[theme.palette.type === ColorMode.LIGHT ? 200 : 800]};
+    border-bottom: 1px solid ${theme.palette.grey[theme.palette.type === ColorMode.LIGHT ? 200 : 900]};
     transition:
       transform 0.5s,
       opacity 0.3s,
