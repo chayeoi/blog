@@ -56,7 +56,7 @@ const TableOfContents: React.FC<Props> = ({ toc, ...otherProps }) => {
     <div css={s.root} {...otherProps}>
       <ul css={s.toc}>
         {_.map(item => (
-          <li key={item.slug} css={s.item}>
+          <li key={item.slug ?? item.title} css={s.item}>
             <a
               css={s.anchor}
               style={activeSlug === item.slug
