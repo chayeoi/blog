@@ -33,6 +33,7 @@ const s = {
     font-size: ${theme.typography.pxToRem(14)};
     font-weight: 500;
     text-transform: uppercase;
+    transition: color 0.2s, background-color 0.2s;
     :hover, :focus {
       background-color: ${theme.palette.hexToRgb(theme.palette.primary.light, ALPHA)};
     }
