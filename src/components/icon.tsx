@@ -11,8 +11,8 @@ interface Props {
   };
 }
 
-const Icon: React.FC<Props> = ({ name, icon }) => (
-  <svg css={s.root} viewBox={icon.viewBox}>
+const Icon: React.FC<Props> = ({ name, icon, ...otherProps }) => (
+  <svg css={s.root} viewBox={icon.viewBox} {...otherProps}>
     <title>{name}</title>
     <path d={icon.path} />
   </svg>
