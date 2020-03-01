@@ -48,6 +48,15 @@ const light = css`
     overflow: -moz-scrollbars-none;
   }
 
+  h1 > code[class*='language-'],
+  h2 > code[class*='language-'],
+  h3 > code[class*='language-'],
+  h4 > code[class*='language-'],
+  h5 > code[class*='language-'],
+  h6 > code[class*='language-'] {
+    font-size: inherit;
+  }
+
   pre[class*='language-']::-webkit-scrollbar {
     display: none;
   }
