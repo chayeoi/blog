@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx, SerializedStyles } from '@emotion/core'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import _ from 'lodash/fp'
@@ -7,10 +7,12 @@ import { useMemo } from 'react'
 
 import Layout from '../components/layout'
 import PostHeader from '../components/post-header'
+import PostNavigation from '../components/post-navigation'
 import Profile from '../components/profile'
 import SEO from '../components/seo'
 import Utterances from '../components/utterances'
 import { CONTAINER_MAX_WIDTH } from '../constants'
+import { Theme } from '../models/Theme'
 import UnstructuredTocItem from '../models/UnstructuredTocItem'
 
 interface Props {
@@ -57,9 +59,29 @@ interface Props {
   location: {
     pathname: string;
   };
+  pageContext: {
+    next?: {
+      id: string;
+      frontmatter: {
+        title: string;
+      };
+      fields: {
+        slug: string;
+      };
+    };
+    previous?: {
+      id: string;
+      frontmatter: {
+        title: string;
+      };
+      fields: {
+        slug: string;
+      };
+    };
+  };
 }
 
-const BlogPost: React.FC<Props> = ({ data, location }) => {
+const BlogPost: React.FC<Props> = ({ data, location, pageContext }) => {
   const {
     title,
     description,
@@ -110,7 +132,8 @@ const BlogPost: React.FC<Props> = ({ data, location }) => {
         <div css={s.wrapper}>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
           <footer>
-            <Profile />
+            <Profile css={s.profile} />
+            <PostNavigation pageContext={pageContext} />
             <Utterances repo={data.site.siteMetadata.repository.name} />
           </footer>
         </div>
@@ -128,6 +151,15 @@ const s = {
     max-width: ${CONTAINER_MAX_WIDTH}px;
     margin: 0 auto;
     padding: 48px 16px 24px;
+  `,
+  profile: (theme: Theme): SerializedStyles => css`
+    margin-bottom: 0.5rem;
+    ${theme.breakpoints.media.sm} {
+      margin-bottom: 1rem;
+    }
+    ${theme.breakpoints.media.md} {
+      margin-bottom: 1.5rem;
+    }
   `,
 }
 

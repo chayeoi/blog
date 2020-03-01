@@ -11,7 +11,7 @@ interface Phrase {
   value: string;
 }
 
-const Profile: React.FC = () => {
+const Profile: React.FC = props => {
   const data = useStaticQuery(graphql`
     query ProfileQuery {
       site {
@@ -47,7 +47,7 @@ const Profile: React.FC = () => {
   )(intro)
 
   return (
-    <div css={s.root}>
+    <div css={s.root} {...props}>
       <Image
         css={s.image}
         fluid={data.file.childImageSharp.fluid}
