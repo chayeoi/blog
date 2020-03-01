@@ -15,7 +15,7 @@ import Utterances from '../components/utterances'
 import { CONTAINER_MAX_WIDTH } from '../constants'
 import { Theme } from '../models/Theme'
 import UnstructuredTocItem from '../models/UnstructuredTocItem'
-import { getToc } from '../utils'
+import { getTocCreator } from '../utils'
 
 interface Props {
   data: {
@@ -79,7 +79,7 @@ const BlogPost: React.FC<Props> = ({ data, location }) => {
     ? `${data.site.siteMetadata.siteUrl}${publicURL}`
     : ''
 
-  const toc = useMemo(() => getToc(data.mdx.tableOfContents.items, 3), [data.mdx.tableOfContents.items])
+  const toc = useMemo(() => getTocCreator()(data.mdx.tableOfContents.items, 3), [data.mdx.tableOfContents.items])
 
   const meta = useMemo(() => _.filter(item => Boolean(item.content), [
     {
