@@ -1,6 +1,6 @@
 import { useTheme } from 'emotion-theming'
 import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
+import React, { memo } from 'react'
 import Helmet from 'react-helmet'
 
 import { splash } from '../assets/images'
@@ -17,7 +17,7 @@ interface Props {
   url?: string;
 }
 
-const SEO: React.FC<Props> = ({
+const SEO: React.FC<Props> = memo(({
   description = '',
   image = '',
   lang = 'ko',
@@ -205,6 +205,6 @@ const SEO: React.FC<Props> = ({
       ].concat(meta)}
     />
   )
-}
+})
 
 export default SEO
