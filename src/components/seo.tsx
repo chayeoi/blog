@@ -131,6 +131,10 @@ const SEO: React.FC<Props> = ({
           content: site.siteMetadata.author,
         },
         {
+          property: 'fb:app_id',
+          content: process.env.GATSBY_FB_APP_ID,
+        },
+        {
           property: 'og:title',
           content: title ? `${title} | ${site.siteMetadata.title as string}` : site.siteMetadata.title,
         },
