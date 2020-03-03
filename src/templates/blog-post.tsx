@@ -47,6 +47,7 @@ interface Props {
     };
     site: {
       siteMetadata: {
+        buyMeACoffee?: string;
         facebook: {
           author: string;
         };
@@ -196,6 +197,7 @@ export const query = graphql`
     }
     site {
       siteMetadata {
+        buyMeACoffee
         facebook {
           author
         }

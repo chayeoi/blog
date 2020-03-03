@@ -26,6 +26,7 @@ module.exports = {
       { name: 'rss', value: 'https://chny.world/rss', href: 'https://feedly.com/i/subscription/feed/https://chny.world/rss.xml' },
       // { name: 'codepen', value: 'chayeoi' },
     ],
+    buyMeACoffee: 'chayeoi',
     facebook: {
       author: 'https://www.facebook.com/chayeoi',
     },
