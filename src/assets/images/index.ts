@@ -9,6 +9,7 @@ import iphonexSplash from './iphonex_splash.png'
 import iphonexrSplash from './iphonexr_splash.png'
 import iphonexsmaxSplash from './iphonexsmax_splash.png'
 
+export { default as facebookIcon } from './ic-facebook.svg'
 export { default as kakaoIcon } from './ic-kakao.svg'
 
 export const splash = {
