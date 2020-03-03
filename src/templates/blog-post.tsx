@@ -10,6 +10,7 @@ import PostHeader from '../components/post-header'
 import PostNavigation from '../components/post-navigation'
 import Profile from '../components/profile'
 import SEO from '../components/seo'
+import SocialShare from '../components/social-share'
 import Utterances from '../components/utterances'
 import { CONTAINER_MAX_WIDTH } from '../constants'
 import { Theme } from '../models/Theme'
@@ -49,6 +50,7 @@ interface Props {
         facebook: {
           author: string;
         };
+        image: string;
         repository: {
           name: string;
         };
@@ -57,6 +59,7 @@ interface Props {
     };
   };
   location: {
+    href: string;
     pathname: string;
   };
   pageContext: {
@@ -91,9 +94,9 @@ const BlogPost: React.FC<Props> = ({ data, location, pageContext }) => {
     tags,
   } = data.mdx.frontmatter
   const publicURL = cover?.publicURL
-  const imageUrl = publicURL
+  const image = publicURL
     ? `${data.site.siteMetadata.siteUrl}${publicURL}`
-    : ''
+    : data.site.siteMetadata.image
 
   const meta = useMemo(() => _.filter(item => Boolean(item.content), [
     {
@@ -119,7 +122,7 @@ const BlogPost: React.FC<Props> = ({ data, location, pageContext }) => {
       <SEO
         title={title}
         description={description}
-        image={imageUrl}
+        image={image}
         type="article"
         url={`${data.site.siteMetadata.siteUrl}${location.pathname}`}
         meta={meta}
@@ -132,6 +135,9 @@ const BlogPost: React.FC<Props> = ({ data, location, pageContext }) => {
         <div css={s.wrapper}>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
           <footer>
+            <SocialShare
+              url={location.href}
+            />
             <Profile css={s.profile} />
             <PostNavigation pageContext={pageContext} />
             <Utterances repo={data.site.siteMetadata.repository.name} />
@@ -192,6 +198,7 @@ export const query = graphql`
         facebook {
           author
         }
+        image
         repository {
           name
         }
