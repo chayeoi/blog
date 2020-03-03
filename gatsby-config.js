@@ -30,7 +30,7 @@ module.exports = {
       author: 'https://www.facebook.com/chayeoi',
     },
     twitter: {
-      name: '@chayeoi',
+      name: 'chayeoi',
     },
     about: {
       title: '개발자 김찬연',

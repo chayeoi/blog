@@ -168,7 +168,7 @@ const SEO: React.FC<Props> = memo(({
         },
         {
           name: 'twitter:creator',
-          content: site.siteMetadata.twitter.name,
+          content: `@${site.siteMetadata.twitter.name as string}`,
         },
         {
           name: 'twitter:title',
