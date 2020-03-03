@@ -2,6 +2,7 @@
 import { css, jsx, SerializedStyles } from '@emotion/core'
 
 import { Theme } from '../models/Theme'
+import FacebookShareLink from './facebook-share-link'
 import KakaoShareLink from './kakao-share-link'
 
 interface Props {
@@ -12,6 +13,9 @@ const SocialShare: React.FC<Props> = ({ url, ...otherProps }) => (
   <ul css={s.root} {...otherProps}>
     <li css={s.item}>
       <KakaoShareLink url={url} />
+    </li>
+    <li css={s.item}>
+      <FacebookShareLink url={url} />
     </li>
   </ul>
 )
