@@ -136,6 +136,7 @@ const BlogPost: React.FC<Props> = ({ data, location, pageContext }) => {
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
           <footer>
             <SocialShare
+              frontmatter={data.mdx.frontmatter}
               url={location.href}
             />
             <Profile css={s.profile} />

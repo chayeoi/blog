@@ -11,6 +11,7 @@ import iphonexsmaxSplash from './iphonexsmax_splash.png'
 
 export { default as facebookIcon } from './ic-facebook.svg'
 export { default as kakaoIcon } from './ic-kakao.svg'
+export { default as twitterIcon } from './ic-twitter.svg'
 
 export const splash = {
   ipad: ipadSplash,
