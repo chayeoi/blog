@@ -35,10 +35,10 @@ const SocialShare: React.FC<Props> = ({ frontmatter, url, ...otherProps }) => (
 const s = {
   root: (theme: Theme): SerializedStyles => css`
     display: flex;
-    justify-content: flex-end;
-    padding: 16px 0 0 0;
+    justify-content: center;
+    padding: 40px 0 24px 0;
     ${theme.breakpoints.media.sm} {
-      padding: 16px 0;
+      padding: 64px 0;
     }
   `,
   item: (theme: Theme): SerializedStyles => css`
@@ -47,7 +47,7 @@ const s = {
     }
     ${theme.breakpoints.media.sm} {
       :not(:last-child) {
-        margin-right: 1.25rem;
+        margin-right: 1.5rem;
       }
     }
   `,
