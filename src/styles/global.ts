@@ -249,6 +249,10 @@ const global = (theme: Theme): SerializedStyles => css`
   }
 
   ${mdx[theme.palette.type]}
+
+  #gatsby-focus-wrapper {
+    background-color: rgba(100, 10, 200, 0.7)
+  }
 `
 
 export default global
