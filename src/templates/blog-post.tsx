@@ -138,7 +138,7 @@ const BlogPost: React.FC<Props> = ({ data, location, pageContext }) => {
           <footer>
             <SocialShare
               frontmatter={data.mdx.frontmatter}
-              url={location.href}
+              url={`${data.site.siteMetadata.siteUrl}${location.pathname}`}
             />
             <Profile css={s.profile} />
             <PostNavigation pageContext={pageContext} />
