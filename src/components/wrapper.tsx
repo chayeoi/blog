@@ -26,10 +26,10 @@ const components: Components = {
   li: MDXComponents.ListItem,
   p: MDXComponents.Paragraph,
   blockquote: MDXComponents.Blockquote,
-  table: MDXComponents.Table,
-  tr: MDXComponents.TableRow,
-  th: MDXComponents.TableCell,
-  td: MDXComponents.TableCell,
+  // table: MDXComponents.Table,
+  // tr: MDXComponents.TableRow,
+  // th: MDXComponents.TableCell,
+  // td: MDXComponents.TableCell,
 }
 
 const Wrapper: React.FC = ({ children }) => {

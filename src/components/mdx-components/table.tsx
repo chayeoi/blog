@@ -16,6 +16,7 @@ export const TableCell: React.FC = props => {
   const Component = isHead ? 'th' : 'td'
 
   useEffect(() => {
+    console.log('elementRef.current:', elementRef.current)
     if (elementRef.current?.closest('thead')) {
       setIsHead(true)
     }
