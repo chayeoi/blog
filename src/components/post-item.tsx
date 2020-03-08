@@ -21,8 +21,8 @@ const PostItem: React.FC<Props> = ({ post }) => {
         <h3 css={s.heading}>
           {post.node.frontmatter.title}
         </h3>
-        <time css={s.createdAt} dateTime={post.node.frontmatter.createdAt}>
-          {dayjs(post.node.frontmatter.createdAt).format('YYYY년 MM월 DD일')}
+        <time css={s.publishedAt} dateTime={post.node.frontmatter.publishedAt}>
+          {dayjs(post.node.frontmatter.publishedAt).format('YYYY년 MM월 DD일')}
         </time>
         <p css={s.description}>{post.node.frontmatter.description}</p>
         <div
@@ -78,7 +78,7 @@ const s = {
     font-weight: 700;
     line-height: 1.2;
   `,
-  createdAt: (theme: Theme): SerializedStyles => css`
+  publishedAt: (theme: Theme): SerializedStyles => css`
     display: block;
     margin-bottom: 0.5rem;
     color: ${theme.palette.text.tertiary};

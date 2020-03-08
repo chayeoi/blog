@@ -15,7 +15,7 @@ interface Props {
   frontmatter: {
     title: string;
     description: string;
-    createdAt: string;
+    publishedAt: string;
     updatedAt: string;
     tags: string[];
     cover?: {
@@ -43,11 +43,11 @@ const PostHeader: React.FC<Props> = ({ frontmatter, tableOfContents }) => {
     title,
     description,
     updatedAt,
-    createdAt,
+    publishedAt,
     cover,
   } = frontmatter
 
-  const isModified = updatedAt && createdAt !== updatedAt
+  const isModified = updatedAt && publishedAt !== updatedAt
   const hasCover = Boolean(cover)
 
   const toc = useMemo(() => getTocCreator()(tableOfContents.items, 3), [tableOfContents.items])
@@ -61,8 +61,8 @@ const PostHeader: React.FC<Props> = ({ frontmatter, tableOfContents }) => {
         </p>
         <ul css={s.dateList}>
           <li>
-            <time dateTime={createdAt}>
-              {dayjs(createdAt).format('YYYY년 MM월 DD일')}
+            <time dateTime={publishedAt}>
+              {dayjs(publishedAt).format('YYYY년 MM월 DD일')}
             </time>
             {isModified && (
               <span>

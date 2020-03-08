@@ -26,7 +26,7 @@ interface Props {
       frontmatter: {
         title: string;
         description: string;
-        createdAt: string;
+        publishedAt: string;
         updatedAt: string;
         tags: string[];
         cover?: {
@@ -90,7 +90,7 @@ const BlogPost: React.FC<Props> = ({ data, location, pageContext }) => {
     title,
     description,
     updatedAt,
-    createdAt,
+    publishedAt,
     cover,
     tags,
   } = data.mdx.frontmatter
@@ -106,7 +106,7 @@ const BlogPost: React.FC<Props> = ({ data, location, pageContext }) => {
     },
     {
       property: 'article:published_time',
-      content: createdAt,
+      content: publishedAt,
     },
     {
       property: 'article:modified_time',
@@ -116,7 +116,7 @@ const BlogPost: React.FC<Props> = ({ data, location, pageContext }) => {
       name: 'keywords',
       content: _.join(',', tags),
     },
-  ]), [createdAt, tags, updatedAt, data.site.siteMetadata.facebook.author])
+  ]), [publishedAt, tags, updatedAt, data.site.siteMetadata.facebook.author])
 
   return (
     <Layout>
@@ -179,7 +179,7 @@ export const query = graphql`
       frontmatter {
         title
         description
-        createdAt
+        publishedAt
         updatedAt
         tags
         cover {
