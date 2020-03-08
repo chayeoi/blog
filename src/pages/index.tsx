@@ -76,7 +76,7 @@ export const query = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___createdAt], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___publishedAt], order: DESC }) {
       edges {
         node {
           id
@@ -84,7 +84,7 @@ export const query = graphql`
             title
             description
             tags
-            createdAt
+            publishedAt
             updatedAt
             cover {
               publicURL

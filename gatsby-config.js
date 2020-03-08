@@ -70,7 +70,7 @@ module.exports = {
           {
             serialize: ({ query: { site, allMdx } }) => allMdx.edges.map(edge => Object.assign({}, edge.node.frontmatter, {
               description: edge.node.frontmatter.description,
-              date: edge.node.frontmatter.createdAt,
+              date: edge.node.frontmatter.publishedAt,
               url: site.siteMetadata.siteUrl + edge.node.fields.slug,
               guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
               custom_elements: [{ 'content:encoded': edge.node.html }],
@@ -79,13 +79,13 @@ module.exports = {
               {
                 allMdx(
                   limit: 1000,
-                  sort: { fields: [frontmatter___createdAt], order: DESC }
+                  sort: { fields: [frontmatter___publishedAt], order: DESC }
                 ) {
                   edges {
                     node {
                       html
                       frontmatter {
-                        createdAt
+                        publishedAt
                         title
                         description
                         tags

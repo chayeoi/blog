@@ -5,7 +5,7 @@ export interface Mdx {
       title: string;
       description: string;
       tags?: string[];
-      createdAt: string;
+      publishedAt: string;
       updatedAt?: string;
       cover?: {
         publicURL: string;
