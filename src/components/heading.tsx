@@ -1,5 +1,7 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx, SerializedStyles } from '@emotion/core'
+
+import { Theme } from '../models/Theme'
 
 interface Props {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
@@ -13,11 +15,14 @@ const Heading: React.FC<Props> = ({ as: Component = 'h2', children, ...otherProp
 )
 
 const s = {
-  root: css`
+  root: (theme: Theme): SerializedStyles => css`
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
+    ${theme.breakpoints.media.sm} {
+      font-size: 2rem;
+    }
   `,
 }
 

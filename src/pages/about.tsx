@@ -108,10 +108,13 @@ const s = {
     object-fit: cover;
     object-position: 50% 50%;
   `,
-  name: css`
+  name: (theme: Theme): SerializedStyles => css`
     margin-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
+    ${theme.breakpoints.media.sm} {
+      font-size: 1.75rem;
+    }
   `,
   content: (theme: Theme): SerializedStyles => css`
     color: ${theme.palette.text.primary};

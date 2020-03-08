@@ -69,13 +69,16 @@ const s = {
       border 0.3s,
       background-color 0.3s;
   `,
-  title: css`
-    font-size: 2.25rem;
+  title: (theme: Theme): SerializedStyles => css`
+    font-size: 1.875rem;
     font-weight: 700;
     a {
       display: block;
       width: 100%;
       height: 100%;
+    }
+    ${theme.breakpoints.media.sm} {
+      font-size: 2.25rem;
     }
   `,
 }
