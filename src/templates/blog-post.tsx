@@ -5,8 +5,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import _ from 'lodash/fp'
 import { useMemo } from 'react'
 
+import Headline from '../components/headline'
 import Layout from '../components/layout'
-import PostHeader from '../components/post-header'
 import PostNavigation from '../components/post-navigation'
 import Profile from '../components/profile'
 import SEO from '../components/seo'
@@ -129,7 +129,7 @@ const BlogPost: React.FC<Props> = ({ data, location, pageContext }) => {
         meta={meta}
       />
       <article css={s.article}>
-        <PostHeader
+        <Headline
           frontmatter={data.mdx.frontmatter}
           tableOfContents={data.mdx.tableOfContents}
         />
