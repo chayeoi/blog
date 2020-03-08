@@ -150,9 +150,7 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-polyfill-io',
-      options: {
-         features: ['IntersectionObserver'],
-      },
+      options: { features: ['IntersectionObserver'] },
    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-robots-txt',
