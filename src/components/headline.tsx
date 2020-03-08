@@ -38,7 +38,7 @@ interface Props {
   };
 }
 
-const PostHeader: React.FC<Props> = ({ frontmatter, tableOfContents }) => {
+const Headline: React.FC<Props> = ({ frontmatter, tableOfContents }) => {
   const {
     title,
     description,
@@ -175,4 +175,4 @@ const s = {
   `,
 }
 
-export default PostHeader
+export default Headline
