@@ -42,7 +42,7 @@ interface Props {
   };
 }
 
-const AboutPage: React.FC<Props> = ({ data, location }) => {
+const AboutPage = ({ data, location }: Props) => {
   const phrases = _.compose(
     // @ts-ignore
     _.map.convert({ cap: false })((p: string, index: number): Phrase => ({

@@ -4,10 +4,7 @@ import { css, jsx, SerializedStyles } from '@emotion/core'
 import { CONTENT_LINK } from '../constants'
 import { Theme } from '../models/Theme'
 
-/**
- * @
- */
-const SkipLink: React.FC = props => (
+const SkipLink = (props: object) => (
   <a css={s.root} href={`#${CONTENT_LINK}`} {...props}>
     본문 바로가기
   </a>

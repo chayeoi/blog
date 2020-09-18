@@ -5,7 +5,7 @@ import { Theme } from '../models/Theme'
 
 type Props = React.HTMLProps<HTMLAnchorElement | HTMLButtonElement> & { as?: string }
 
-const ShareLink: React.FC<Props> = ({ as: Component = 'a', ...otherProps }) => (
+const ShareLink = ({ as: Component = 'a', ...otherProps }: Props) => (
   <Component css={s.root} {...otherProps} />
 )
 

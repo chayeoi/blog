@@ -11,7 +11,7 @@ interface Phrase {
   value: string;
 }
 
-const Profile: React.FC = props => {
+const Profile = (props: object) => {
   const data = useStaticQuery(graphql`
     query ProfileQuery {
       site {

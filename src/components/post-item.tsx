@@ -12,7 +12,7 @@ interface Props {
   post: Mdx;
 }
 
-const PostItem: React.FC<Props> = ({ post }) => {
+const PostItem = ({ post }: Props) => {
   const hasCover = Boolean(post.node.frontmatter.cover)
 
   return (

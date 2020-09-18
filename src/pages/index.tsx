@@ -28,7 +28,7 @@ interface Props {
   };
 }
 
-const HomePage: React.FC<Props> = ({ data, location }) => {
+const HomePage = ({ data, location }: Props) => {
   const posts = data.allMdx.edges
 
   const meta = useMemo(() => _.filter(item => Boolean(item.content), [

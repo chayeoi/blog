@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Theme } from '../models/Theme'
 
-const NotFoundPage: React.FC = () => {
+const NotFoundPage = () => {
   return (
     <Layout>
       <SEO title="404: Not found" />

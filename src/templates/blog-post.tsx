@@ -85,7 +85,7 @@ interface Props {
   };
 }
 
-const BlogPost: React.FC<Props> = ({ data, location, pageContext }) => {
+const BlogPost = ({ data, location, pageContext }: Props) => {
   const {
     title,
     description,

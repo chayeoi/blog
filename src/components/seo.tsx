@@ -17,7 +17,7 @@ interface Props {
   url?: string;
 }
 
-const SEO: React.FC<Props> = memo(({
+const SEO = memo(({
   description = '',
   image = '',
   lang = 'ko',
@@ -26,7 +26,7 @@ const SEO: React.FC<Props> = memo(({
   title,
   type = 'website',
   url = '',
-}) => {
+}: Props) => {
   const { site, favicon } = useStaticQuery(
     graphql`
       query {

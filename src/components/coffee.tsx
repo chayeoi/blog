@@ -6,7 +6,7 @@ interface Props {
   slug: string;
 }
 
-const Coffee: React.FC<Props> = ({ slug }) => (
+const Coffee = ({ slug }: Props) => (
   <React.Fragment>
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" />
     <a

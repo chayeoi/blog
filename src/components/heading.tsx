@@ -8,7 +8,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Heading: React.FC<Props> = ({ as: Component = 'h2', children, ...otherProps }) => (
+const Heading = ({ as: Component = 'h2', children, ...otherProps }: Props) => (
   <Component css={s.root} {...otherProps}>
     {children}
   </Component>

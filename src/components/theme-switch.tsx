@@ -7,7 +7,7 @@ import { ALPHA, COLOR_MODE_KEY, ColorMode, UtterancesTheme } from '../constants'
 import { useColorMode } from '../hooks'
 import { Theme } from '../models/Theme'
 
-const ThemeSwitch: React.FC = () => {
+const ThemeSwitch = () => {
   const theme: Theme = useTheme()
 
   const [, setColorMode] = useColorMode()

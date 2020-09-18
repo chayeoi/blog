@@ -3,7 +3,7 @@ import React from 'react'
 
 import { Theme } from '../models/Theme'
 
-const Wave: React.FC = props => (
+const Wave = (props: object) => (
   <svg css={s.root} viewBox="0 0 120 28" {...props}>
     <defs>
       <mask id="xxx">

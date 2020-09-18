@@ -13,6 +13,10 @@ interface Components {
   [key: string]: React.FC;
 }
 
+interface Props {
+  children: React.ReactNode;
+}
+
 const components: Components = {
   a: MDXComponents.Anchor,
   h1: MDXComponents.H1,
@@ -32,7 +36,7 @@ const components: Components = {
   td: MDXComponents.TableCell,
 }
 
-const Wrapper: React.FC = ({ children }) => {
+const Wrapper = ({ children }: Props) => {
   const [colorMode, setColorMode] = useState<ColorMode>(ColorMode.LIGHT)
 
   useEffect(() => {

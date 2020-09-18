@@ -6,7 +6,7 @@ import { CONTAINER_MAX_WIDTH } from '../constants'
 import { Theme } from '../models/Theme'
 import Contacts from './contacts'
 
-const Footer: React.FC = props => {
+const Footer = (props: object) => {
   const data = useStaticQuery(graphql`
     query {
       site {

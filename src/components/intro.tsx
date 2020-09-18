@@ -3,7 +3,7 @@ import { css, jsx, SerializedStyles } from '@emotion/core'
 
 import { Theme } from '../models/Theme'
 
-const Intro: React.FC = () => {
+const Intro = () => {
   return (
     <div css={s.root}>
       <span>개발자 김찬연</span>

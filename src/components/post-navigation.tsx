@@ -31,7 +31,7 @@ interface Props {
   };
 }
 
-const PostNavigation: React.FC<Props> = ({ pageContext }) => {
+const PostNavigation = ({ pageContext }: Props) => {
   const theme: Theme = useTheme()
 
   const isMedium = useMedia(`(min-width: ${theme.breakpoints.sizes.sm}px)`)

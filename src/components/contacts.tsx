@@ -35,7 +35,7 @@ const ICONS = {
   twitter: TWITTER_ICON,
 }
 
-const Contacts: React.FC<Props> = ({ contacts, ...otherProps }) => (
+const Contacts = ({ contacts, ...otherProps }: Props) => (
   <ul css={s.root} {...otherProps}>
     {_.map((contact: Contact): React.ReactNode => (
       <li key={contact.name} css={s.contactItem}>

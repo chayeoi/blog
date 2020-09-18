@@ -9,7 +9,7 @@ interface Props {
   posts: Mdx[];
 }
 
-const PostList: React.FC<Props> = ({ posts }) => (
+const PostList = ({ posts }: Props) => (
   <ol>
     {_.map((post: Mdx) => (
       <PostItem key={post.node.id} post={post} />

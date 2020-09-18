@@ -15,7 +15,7 @@ interface Props {
   url: string;
 }
 
-const TwitterShareLink: React.FC<Props> = ({ description, tags, url, ...otherProps }) => {
+const TwitterShareLink = ({ description, tags, url, ...otherProps }: Props) => {
   const data = useStaticQuery(graphql`
     query {
       site {

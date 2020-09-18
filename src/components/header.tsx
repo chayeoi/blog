@@ -13,7 +13,7 @@ interface Props {
   siteTitle?: string;
 }
 
-const Header: React.FC<Props> = ({ siteTitle = '' }) => {
+const Header = ({ siteTitle = '' }: Props) => {
   const [scrollY, setScrollY] = useState(typeof window === 'undefined' ? 0 : window.pageYOffset)
 
   const prevScrollY = usePrevious(scrollY)

@@ -10,7 +10,7 @@ interface Props {
   url: string;
 }
 
-const FacebookShareLink: React.FC<Props> = ({ url, ...otherProps }) => {
+const FacebookShareLink = ({ url, ...otherProps }: Props) => {
   const href = useMemo(() => encodeURI(`https://www.facebook.com/sharer/sharer.php?u=${url}/&amp;src=sdkpreparse`), [url])
 
   return (

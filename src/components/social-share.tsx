@@ -14,7 +14,7 @@ interface Props {
   };
 }
 
-const SocialShare: React.FC<Props> = ({ frontmatter, url, ...otherProps }) => (
+const SocialShare = ({ frontmatter, url, ...otherProps }: Props) => (
   <ul css={s.root} {...otherProps}>
     <li css={s.item}>
       <FacebookShareLink url={url} />

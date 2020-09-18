@@ -3,7 +3,7 @@ import React from 'react'
 
 import Burger from './burger'
 
-const MenuButton: React.FC = props => (
+const MenuButton = (props: object) => (
   <button css={s.button} type="button" {...props}>
     <Burger />
   </button>

@@ -7,7 +7,7 @@ import { ALPHA } from '../constants'
 import { Theme } from '../models/Theme'
 import ThemeSwitch from './theme-switch'
 
-const Navbar: React.FC = memo(() => (
+const Navbar = memo(() => (
   <nav>
     <ul css={s.menuList}>
       <li>

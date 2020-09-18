@@ -7,7 +7,7 @@ interface Props {
   top?: number;
 }
 
-const Sticky: React.FC<Props> = ({ top = 0, ...otherProps }) => {
+const Sticky = ({ top = 0, ...otherProps }: Props) => {
   const elementRef = useRef<HTMLDivElement>(null)
   const y = useRef(0)
 

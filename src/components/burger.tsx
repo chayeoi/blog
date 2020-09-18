@@ -4,7 +4,7 @@ interface Props {
   size?: string;
 }
 
-const Burger: React.FC<Props> = ({ size = '1em' }) => (
+const Burger = ({ size = '1em' }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}

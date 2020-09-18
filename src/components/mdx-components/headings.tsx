@@ -3,17 +3,17 @@ import { css, jsx } from '@emotion/core'
 
 import { HEADER_MIN_HEIGHT } from '../../constants'
 
-export const H1: React.FC = props => <h1 css={[s.offset, s.h1]} {...props} />
+export const H1 = (props: object) => <h1 css={[s.offset, s.h1]} {...props} />
 
-export const H2: React.FC = props => <h2 css={[s.offset, s.h2]} {...props} />
+export const H2 = (props: object) => <h2 css={[s.offset, s.h2]} {...props} />
 
-export const H3: React.FC = props => <h3 css={[s.offset, s.h3]} {...props} />
+export const H3 = (props: object) => <h3 css={[s.offset, s.h3]} {...props} />
 
-export const H4: React.FC = props => <h4 css={[s.offset, s.h4]} {...props} />
+export const H4 = (props: object) => <h4 css={[s.offset, s.h4]} {...props} />
 
-export const H5: React.FC = props => <h5 css={[s.offset, s.h5]} {...props} />
+export const H5 = (props: object) => <h5 css={[s.offset, s.h5]} {...props} />
 
-export const H6: React.FC = props => <h6 css={[s.offset, s.h6]} {...props} />
+export const H6 = (props: object) => <h6 css={[s.offset, s.h6]} {...props} />
 
 const s = {
   offset: css`

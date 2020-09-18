@@ -3,7 +3,7 @@ import { css, jsx, SerializedStyles } from '@emotion/core'
 
 import { Theme } from '../../models/Theme'
 
-export const Blockquote: React.FC = props => <blockquote css={s.blockquote} {...props} />
+export const Blockquote = (props: object) => <blockquote css={s.blockquote} {...props} />
 
 const s = {
   blockquote: (theme: Theme): SerializedStyles => css`

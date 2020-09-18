@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from 'react'
 
 import { Theme } from '../../models/Theme'
 
-export const Table: React.FC = props => <table css={s.table} {...props} />
+export const Table = (props: object) => <table css={s.table} {...props} />
 
-export const TableRow: React.FC = props => <tr css={s.tr} {...props} />
+export const TableRow = (props: object) => <tr css={s.tr} {...props} />
 
-export const TableCell: React.FC = props => {
+export const TableCell = (props: object) => {
   const [isHead, setIsHead] = useState(false)
 
   const elementRef = useRef<HTMLTableCellElement>(null)

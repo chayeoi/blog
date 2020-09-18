@@ -38,7 +38,7 @@ interface Props {
   };
 }
 
-const Headline: React.FC<Props> = ({ frontmatter, tableOfContents }) => {
+const Headline = ({ frontmatter, tableOfContents }: Props) => {
   const {
     title,
     description,

@@ -3,7 +3,7 @@ import { css, jsx, SerializedStyles } from '@emotion/core'
 
 import { Theme } from '../../models/Theme'
 
-export const Anchor: React.FC = props => <a css={s.a} target="_blank" {...props} />
+export const Anchor = (props: object) => <a css={s.a} target="_blank" {...props} />
 
 const s = {
   a: (theme: Theme): SerializedStyles => css`

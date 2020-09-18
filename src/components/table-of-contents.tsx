@@ -12,7 +12,7 @@ interface Props {
   toc: TocItem[];
 }
 
-const TableOfContents: React.FC<Props> = ({ toc, ...otherProps }) => {
+const TableOfContents = ({ toc, ...otherProps }: Props) => {
   const [activeSlug, setActiveSlug] = useState<string | null>(null)
 
   const theme: Theme = useTheme()

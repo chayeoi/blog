@@ -6,7 +6,7 @@ export interface Props {
   repo: string;
 }
 
-const Utterances: React.FC<Props> = memo(({ repo }) => {
+const Utterances = memo(({ repo }: Props) => {
   const elementRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {

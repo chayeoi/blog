@@ -19,7 +19,7 @@ interface Props {
 
 const KAKAO_SCRIPT_ID = 'kakaoSDK'
 
-const KakaoShareLink: React.FC<Props> = ({ url, ...otherProps }) => {
+const KakaoShareLink = ({ url, ...otherProps }: Props) => {
   const handleClick = useCallback((): void => {
     window.Kakao.Link.sendScrap({ requestUrl: url })
   }, [url])
