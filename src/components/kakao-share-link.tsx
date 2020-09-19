@@ -13,7 +13,7 @@ declare global {
   }
 }
 
-interface Props {
+type Props = {
   url: string;
 }
 

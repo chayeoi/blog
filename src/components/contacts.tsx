@@ -21,7 +21,7 @@ interface Contact {
   href: string;
 }
 
-interface Props {
+type Props = {
   contacts: Contact[];
 }
 

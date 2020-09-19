@@ -16,7 +16,7 @@ import { CONTAINER_MAX_WIDTH } from '../constants'
 import { Theme } from '../models/Theme'
 import UnstructuredTocItem from '../models/UnstructuredTocItem'
 
-interface Props {
+type Props = {
   data: {
     mdx: {
       body: string;

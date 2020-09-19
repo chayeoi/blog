@@ -8,7 +8,7 @@ import { TOC_ITEM_SPACING } from '../constants'
 import { Theme } from '../models/Theme'
 import TocItem from '../models/TocItem'
 
-interface Props {
+type Props = {
   toc: TocItem[];
 }
 

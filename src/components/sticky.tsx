@@ -3,7 +3,7 @@ import { jsx } from '@emotion/core'
 import _ from 'lodash/fp'
 import { useCallback, useEffect, useRef } from 'react'
 
-interface Props {
+type Props = {
   top?: number;
 }
 

@@ -8,7 +8,7 @@ import { ALPHA, PNG } from '../constants'
 import { Mdx } from '../models/Mdx'
 import { Theme } from '../models/Theme'
 
-interface Props {
+type Props = {
   post: Mdx;
 }
 

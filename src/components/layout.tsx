@@ -7,7 +7,7 @@ import Footer from './footer'
 import Header from './header'
 import SkipLink from './skip-link'
 
-interface Props {
+type Props = {
   children: React.ReactNode;
 }
 

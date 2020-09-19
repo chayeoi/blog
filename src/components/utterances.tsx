@@ -2,7 +2,7 @@ import React, { memo, useLayoutEffect, useRef } from 'react'
 
 import { COLOR_MODE_KEY, ColorMode, UtterancesTheme } from '../constants'
 
-export interface Props {
+export type Props = {
   repo: string;
 }
 

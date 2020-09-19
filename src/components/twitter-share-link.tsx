@@ -9,7 +9,7 @@ import { twitterIcon } from '../assets/images'
 import a11y from '../styles/a11y'
 import ShareLink from './share-link'
 
-interface Props {
+type Props = {
   description: string;
   tags: string[];
   url: string;

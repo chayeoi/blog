@@ -9,7 +9,7 @@ import { usePrevious } from '../hooks'
 import { Theme } from '../models/Theme'
 import Navbar from './navbar'
 
-interface Props {
+type Props = {
   siteTitle?: string;
 }
 

@@ -6,7 +6,7 @@ import FacebookShareLink from './facebook-share-link'
 import KakaoShareLink from './kakao-share-link'
 import TwitterShareLink from './twitter-share-link'
 
-interface Props {
+type Props = {
   url: string;
   frontmatter: {
     description: string;

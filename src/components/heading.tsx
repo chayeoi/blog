@@ -3,7 +3,7 @@ import { css, jsx, SerializedStyles } from '@emotion/core'
 
 import { Theme } from '../models/Theme'
 
-interface Props {
+type Props = {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   children: React.ReactNode;
 }

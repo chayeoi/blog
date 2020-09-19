@@ -11,7 +11,7 @@ import { getTocCreator } from '../utils'
 import Sticky from './sticky'
 import TableOfContents from './table-of-contents'
 
-interface Props {
+type Props = {
   frontmatter: {
     title: string;
     description: string;

@@ -8,7 +8,7 @@ import { ALPHA, ARROW_LEFT_ICON, ARROW_RIGHT_ICON } from '../constants'
 import { Theme } from '../models/Theme'
 import Icon from './icon'
 
-interface Props {
+type Props = {
   pageContext: {
     next?: {
       id: string;

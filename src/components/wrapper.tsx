@@ -13,7 +13,7 @@ interface Components {
   [key: string]: React.FC;
 }
 
-interface Props {
+type Props = {
   children: React.ReactNode;
 }
 

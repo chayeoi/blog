@@ -11,7 +11,7 @@ import SEO from '../components/seo'
 import { CONTAINER_MAX_WIDTH } from '../constants'
 import { Mdx } from '../models/Mdx'
 
-interface Props {
+type Props = {
   data: {
     site: {
       siteMetadata: {

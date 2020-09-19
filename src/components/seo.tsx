@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import { splash } from '../assets/images'
 import { Theme } from '../models/Theme'
 
-interface Props {
+type Props = {
   description?: string;
   image?: string;
   lang?: string;

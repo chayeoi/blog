@@ -2,7 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import React from 'react'
 
-interface Props {
+type Props = {
   slug: string;
 }
 

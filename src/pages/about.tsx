@@ -15,7 +15,7 @@ interface Phrase {
   value: string;
 }
 
-interface Props {
+type Props = {
   data: {
     site: {
       siteMetadata: {

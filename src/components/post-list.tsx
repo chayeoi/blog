@@ -5,7 +5,7 @@ import _ from 'lodash/fp'
 import { Mdx } from '../models/Mdx'
 import PostItem from './post-item'
 
-interface Props {
+type Props = {
   posts: Mdx[];
 }
 

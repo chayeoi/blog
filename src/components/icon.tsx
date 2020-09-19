@@ -3,7 +3,7 @@ import React from 'react'
 
 import { Theme } from '../models/Theme'
 
-interface Props {
+type Props = {
   name: string;
   icon: {
     viewBox?: string;
