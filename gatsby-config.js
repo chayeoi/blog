@@ -7,8 +7,8 @@ const currentYear = new Date().getFullYear()
 
 module.exports = {
   siteMetadata: {
-    name: 'CHNY',
-    title: 'CHNY.WORLD',
+    name: 'CHAYEOI',
+    title: 'CHAYEOI.SITE',
     description: '개발자 김찬연 TECH 블로그',
     image: 'https://repository-images.githubusercontent.com/238482693/10065400-563f-11ea-9f76-928d767a061d',
     author: '김찬연',
@@ -23,7 +23,7 @@ module.exports = {
       { name: 'twitter', value: 'chayeoi', href: 'https://twitter.com/goBoZYtJmdB3QRy' },
       { name: 'linkedin', value: 'chayeoi', href: `https://www.linkedin.com/in/${encodeURIComponent('찬연-김-928290177')}/` },
       { name: 'email', value: 'chayeoikeem@gmail.com', href: 'mailto://chayeoikeem@gmail.com' },
-      { name: 'rss', value: 'https://chny.world/rss', href: 'https://feedly.com/i/subscription/feed/https://chny.world/rss.xml' },
+      { name: 'rss', value: 'https://chayeoi.site/rss', href: 'https://feedly.com/i/subscription/feed/https://chayeoi.site/rss.xml' },
       // { name: 'codepen', value: 'chayeoi' },
     ],
     buyMeACoffee: 'chayeoi',
@@ -47,7 +47,7 @@ module.exports = {
       job: 'Developer',
       region: 'Seoul, Korea',
     },
-    siteUrl: 'https://chny.world',
+    siteUrl: 'https://chayeoi.site',
   },
   plugins: [
     'gatsby-plugin-emotion',
@@ -99,7 +99,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: 'RSS | CHNY',
+            title: 'RSS | CHAYEOI',
           },
         ],
       },
@@ -184,8 +184,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'CHNY.WORLD',
-        short_name: 'chny.world',
+        name: 'CHAYEOI.SITE',
+        short_name: 'chayeoi.site',
         start_url: '/',
         background_color: '#2979ff',
         theme_color: '#2979ff',

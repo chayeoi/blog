@@ -56,7 +56,7 @@ const AboutPage = ({ data, location }: Props) => {
   const meta = useMemo(() => _.filter(item => Boolean(item.content), [
     {
       name: 'keywords',
-      content: '김찬연,chayeoi,chny',
+      content: '김찬연,chayeoi',
     },
   ]), [])
 

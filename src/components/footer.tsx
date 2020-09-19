@@ -26,7 +26,7 @@ const Footer = (props: object) => {
   return (
     <footer css={s.root} {...props}>
       <Contacts contacts={data.site.siteMetadata.contacts} />
-      <small css={s.copyright}>© {new Date().getFullYear()} — Made by <em css={s.author}>CHNY</em></small>
+      <small css={s.copyright}>© {new Date().getFullYear()} — Made by <em css={s.author}>CHAYEOI</em></small>
     </footer>
   )
 }

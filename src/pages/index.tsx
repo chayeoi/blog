@@ -34,7 +34,7 @@ const HomePage = ({ data, location }: Props) => {
   const meta = useMemo(() => _.filter(item => Boolean(item.content), [
     {
       name: 'keywords',
-      content: '김찬연,chayeoi,chny,웹 개발,웹,리액트,자바스크립트,타입스크립트,React,Javascript,Typescript',
+      content: '김찬연,chayeoi,웹 개발,웹,리액트,자바스크립트,타입스크립트,React,Javascript,Typescript',
     },
   ]), [])
 
