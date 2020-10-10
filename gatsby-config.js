@@ -36,7 +36,7 @@ module.exports = {
     about: {
       title: '개발자 김찬연',
       content: `
-        개발자 김찬연이라고 합니다. 유려한 UI 설계에 관심이 많습니다. 😆
+        개발자 김찬연이라고 합니다. React와 TypeScript로 앱을 만듭니다.
       `,
       name: '김찬연',
       intro: `
