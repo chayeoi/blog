@@ -20,7 +20,7 @@ module.exports = {
       { name: 'github', value: 'chayeoi', href: 'https://github.com/chayeoi' },
       { name: 'instagram', value: 'chayeoi', href: 'https://www.instagram.com/chayeoi/' },
       { name: 'facebook', value: 'chayeoi', href: 'https://www.facebook.com/chayeoi' },
-      { name: 'twitter', value: 'chayeoi', href: 'https://twitter.com/goBoZYtJmdB3QRy' },
+      { name: 'twitter', value: 'ccordinary', href: 'https://twitter.com/ccordinary' },
       { name: 'linkedin', value: 'chayeoi', href: `https://www.linkedin.com/in/${encodeURIComponent('찬연-김-928290177')}/` },
       { name: 'email', value: 'chayeoikeem@gmail.com', href: 'mailto://chayeoikeem@gmail.com' },
       { name: 'rss', value: 'https://chayeoi.site/rss', href: 'https://feedly.com/i/subscription/feed/https://chayeoi.site/rss.xml' },
