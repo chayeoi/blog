@@ -2,9 +2,6 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const FIRST_YEAR = 2018
-const currentYear = new Date().getFullYear()
-
 module.exports = {
   siteMetadata: {
     name: 'CHAYEOI',
@@ -24,7 +21,6 @@ module.exports = {
       { name: 'linkedin', value: 'chayeoi', href: `https://www.linkedin.com/in/${encodeURIComponent('찬연-김-928290177')}/` },
       { name: 'email', value: 'chayeoikeem@gmail.com', href: 'mailto://chayeoikeem@gmail.com' },
       { name: 'rss', value: 'https://chayeoi.site/rss', href: 'https://feedly.com/i/subscription/feed/https://chayeoi.site/rss.xml' },
-      // { name: 'codepen', value: 'chayeoi' },
     ],
     buyMeACoffee: 'chayeoi',
     facebook: {
@@ -36,8 +32,8 @@ module.exports = {
     about: {
       title: '개발자 김찬연',
       content: `
-        다행히 아직까지는 코딩할 때가 제일 행복한 3년차 개발자입니다.
-        우아한 코드와 UI를 설계를 고민하고 코드 리뷰 등을 통한 기술적 토론을 즐기며,  평소에 생각을 글로 정리하고 무엇이든 꼼꼼히 기록하는 습관이 있습니다.
+        평범한 3년차 개발자입니다.
+        우아한 코드와 UI를 설계를 고민하고 코드 리뷰 등을 통한 기술적 토론을 즐기며, 평소에 생각을 글로 정리하고 무엇이든 꼼꼼히 기록하는 습관이 있습니다.
         개발자로서는 조금 특이하게도 수학교육을 전공하였고, 이때부터 여러 사람들을 가르치며 지식을 공유하는 일에 즐거움을 느껴 개발자가 된 이후에도 오프라인 강의, 오픈소스 문서 번역 등 다양한 방법으로 지식을 나누려 노력하고 있습니다.
       `,
       name: '김찬연',
