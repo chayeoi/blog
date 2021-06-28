@@ -39,7 +39,7 @@
     "lodash": "^4.17.21",
     "mdx-utils": "^0.2.0",
     "prism-react-renderer": "^1.0.2",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.24.0",
     "prop-types": "^15.7.2",
     "query-string": "^6.11.1",
     "react": "^16.12.0",
