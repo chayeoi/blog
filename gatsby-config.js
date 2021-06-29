@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     name: 'CHAYEOI',
     title: 'CHAYEOI.SITE',
-    description: '개발자 김찬연 TECH 블로그',
+    description: '개발자 김찬연 기술 블로그',
     image: 'https://repository-images.githubusercontent.com/238482693/10065400-563f-11ea-9f76-928d767a061d',
     author: '김찬연',
     repository: {
@@ -32,9 +32,7 @@ module.exports = {
     about: {
       title: '개발자 김찬연',
       content: `
-        평범한 3년차 개발자입니다.
-        우아한 코드와 UI를 설계를 고민하고 코드 리뷰 등을 통한 기술적 토론을 즐기며, 평소에 생각을 글로 정리하고 무엇이든 꼼꼼히 기록하는 습관이 있습니다.
-        개발자로서는 조금 특이하게도 수학교육을 전공하였고, 이때부터 여러 사람들을 가르치며 지식을 공유하는 일에 즐거움을 느껴 개발자가 된 이후에도 오프라인 강의, 오픈소스 문서 번역 등 다양한 방법으로 지식을 나누려 노력하고 있습니다.
+        3년차 프론트엔드 개발자.
       `,
       name: '김찬연',
       intro: `
